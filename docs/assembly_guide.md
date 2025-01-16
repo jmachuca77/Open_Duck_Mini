@@ -1,0 +1,44 @@
+# Assembly guide
+
+## Requirements : 
+
+You will need : 
+- A soldering iron, and basic electronics tools and skills
+- X m3 screws (TODO : add the exact number)
+- Some wire
+- TODO
+
+## Building the skeleton
+
+In this part, we build the skeleton of the robot.
+
+### Parts needed : 
+- foot_top.stl x2
+- foot_side.stl x2
+- foot_bottom_tpu.stl x2 (TPU)
+- knee_to_ankle_left_sheet.stl x4
+- knee_to_ankle_right_sheet.stl x4
+- leg_spacer.stl x4
+- left_roll_to_pitch.stl x1
+- right_roll_to_pitch.stl x1
+- roll_motor_bottom.stl x2
+- roll_motor_top.stl x2
+- trunk_bottom.stl x1
+- trunk_top.stl x1
+- neck_left_sheet.stl x1
+- neck_right_sheet.stl x1
+- head_pitch_to_yaw.stl x1
+- head_yaw_to_roll.stl x1
+- head_roll_mount.stl x1
+
+### Steps :
+
+TODO
+
+## Electronics
+
+TODO
+
+## Final assembly
+
+TODO
