@@ -2,7 +2,7 @@
 
 You can find the `.stl` files under the `print/` directory at the root of this repo. 
 
-All the parts are printed in standard PLA, except for `foot_bottom_tpu.stl`, which is to be printed in TPU.
+All the parts are printed in standard PLA with 15% infill, except for `foot_bottom_tpu.stl`, which is to be printed in TPU at 40% infill.
 
 ## Parts to print
 - foot_top.stl x2
