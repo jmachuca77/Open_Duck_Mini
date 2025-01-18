@@ -2,8 +2,8 @@
 	<!-- 100 hz -->
 	<!-- <option timestep="0.01"/> -->
 	<!-- <statistic center="0 0 0.55" extent="1.1" /> -->
-	<!-- <include file="robot.xml" /> -->
-	<include file="robot_motors.xml" />
+	<include file="robot.xml" />
+	<!-- <include file="robot_motor.xml" /> -->
 	<default>
 		<!-- sliding friction, torsional friction, rolling friction -->
 		<!-- <geom friction="3.0 0.1 0.006"/> -->

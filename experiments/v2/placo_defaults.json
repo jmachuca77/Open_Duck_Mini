@@ -37,12 +37,16 @@
     "neck_pitch",
     "head_pitch", 
     "head_yaw",
-    "head_roll"
+    "head_roll",
+    "left_antenna",
+    "right_antenna"
   ],
   "joint_angles": {
     "neck_pitch": 0,
     "head_pitch": 0,
     "head_yaw": 0,
-    "head_roll": 0
+    "head_roll": 0,
+    "left_antenna": 0,
+    "right_antenna": 0
   }
 }
