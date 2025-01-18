@@ -120,11 +120,11 @@ mujoco_init_pos = np.array(isaac_to_mujoco(isaac_init_pos))
 model = mujoco.MjModel.from_xml_path(
     "/home/antoine/MISC/mini_BDX/mini_bdx/robots/open_duck_mini_v2/scene.xml"
 )
-# model.opt.timestep = 0.005
-model.opt.timestep = 1 / 60  # /2 substeps ?
+model.opt.timestep = 0.01
+# model.opt.timestep = 1 / 60  # /2 substeps ?
 data = mujoco.MjData(model)
 # mujoco.mj_step(model, data)
-control_decimation = 2
+control_decimation = 1
 
 data.qpos[3 : 3 + 4] = [1, 0, 0.0, 0]
 data.qpos[7 : 7 + 16] = mujoco_init_pos
@@ -132,7 +132,7 @@ data.ctrl[:16] = mujoco_init_pos
 
 policy = OnnxInfer(args.onnx_model_path, awd=True)
 
-commands = [0.4, 0.0, 0.0]
+commands = [0.3, 0.0, 0.0]
 
 # define context variables
 prev_isaac_action = np.zeros(16)
