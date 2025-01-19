@@ -10,21 +10,10 @@ from mini_bdx.utils.mujoco_utils import check_contact
 
 from mini_bdx_runtime.onnx_infer import OnnxInfer
 
-from mini_bdx_runtime.rl_utils import (
-    # action_to_pd_targets,
-    isaac_to_mujoco,
-    mujoco_to_isaac,
-    mujoco_joints_order,
-    isaac_joints_order,
-)
-
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-o", "--onnx_model_path", type=str, required=True)
 parser.add_argument("-k", action="store_true", default=False)
-# parser.add_argument("--rma", action="store_true", default=False)
-# parser.add_argument("--awd", action="store_true", default=False)
-# parser.add_argument("--adaptation_module_path", type=str, required=False)
 parser.add_argument("--replay_obs", type=str, required=False, default=None)
 args = parser.parse_args()
 
@@ -61,26 +50,26 @@ def quat_rotate_inverse(q, v):
     return a - b + c
 
 
-def get_obs(data, prev_isaac_action, commands):
+def get_obs(data, prev_action, commands):
     base_quat = data.qpos[3 : 3 + 4].copy()
     base_quat = [base_quat[1], base_quat[2], base_quat[3], base_quat[0]]
 
-    mujoco_dof_pos = data.qpos[7 : 7 + 16].copy()
-    isaac_dof_pos = mujoco_to_isaac(mujoco_dof_pos)
+    dof_pos = data.qpos[7 : 7 + 16].copy()
 
-    mujoco_dof_vel = data.qvel[6 : 6 + 16].copy()
-    isaac_dof_vel = mujoco_to_isaac(mujoco_dof_vel)
+    dof_vel = data.qvel[6 : 6 + 16].copy()
 
     projected_gravity = quat_rotate_inverse(base_quat, [0, 0, -1])
+
     feet_contacts = get_feet_contact()
+    # feet_contacts = [0, 0]
 
     obs = np.concatenate(
         [
             projected_gravity,
-            isaac_dof_pos,
-            isaac_dof_vel,
+            dof_pos,
+            dof_vel,
             feet_contacts,
-            prev_isaac_action,
+            prev_action,
             commands,
         ]
     )
@@ -94,7 +83,7 @@ def get_feet_contact():
     return [left_contact, right_contact]
 
 
-isaac_init_pos = np.array(
+init_pos = np.array(
     [
         0.002,
         0.053,
@@ -115,8 +104,6 @@ isaac_init_pos = np.array(
     ]
 )
 
-mujoco_init_pos = np.array(isaac_to_mujoco(isaac_init_pos))
-
 model = mujoco.MjModel.from_xml_path(
     "/home/antoine/MISC/mini_BDX/mini_bdx/robots/open_duck_mini_v2/scene.xml"
 )
@@ -127,16 +114,16 @@ data = mujoco.MjData(model)
 control_decimation = 1
 
 data.qpos[3 : 3 + 4] = [1, 0, 0.0, 0]
-data.qpos[7 : 7 + 16] = mujoco_init_pos
-data.ctrl[:16] = mujoco_init_pos
+data.qpos[7 : 7 + 16] = init_pos
+data.ctrl[:16] = init_pos
 
 policy = OnnxInfer(args.onnx_model_path, awd=True)
 
 commands = [0.3, 0.0, 0.0]
 
 # define context variables
-prev_isaac_action = np.zeros(16)
-target_dof_pos = mujoco_init_pos.copy()
+prev_action = np.zeros(16)
+target_dof_pos = init_pos.copy()
 action_scale = 1
 
 kps = np.array([7] * 16)
@@ -159,25 +146,22 @@ with mujoco.viewer.launch_passive(
             data.qvel[6:].copy(),
             kds,
         )
-        data.ctrl[:14] = np.clip(tau, -3, 3)[:14]
+        data.ctrl[:] = np.clip(tau, -3, 3)
 
         mujoco.mj_step(model, data)
         counter += 1
-        get_obs(data, prev_isaac_action, commands)
+        get_obs(data, prev_action, commands)
         if counter % control_decimation == 0 and time.time() - start > 2:
             if args.replay_obs is not None:
-                isaac_obs = replay_obs[replay_counter]
-                # isaac_action = isaac_obs[-16-3:-3]
-                # print(isaac_action)
+                obs = replay_obs[replay_counter]
                 replay_counter += 1
             else:
-                isaac_obs = get_obs(data, prev_isaac_action, commands)
-            isaac_action = policy.infer(isaac_obs)
-            isaac_action = np.clip(isaac_action, -1, 1)
-            prev_isaac_action = isaac_action.copy()
+                obs = get_obs(data, prev_action, commands)
+            action = policy.infer(obs)
+            action = np.clip(action, -1, 1)
+            prev_action = action.copy()
 
-            mujoco_action = isaac_to_mujoco(isaac_action)
-            target_dof_pos = np.array(mujoco_action) * action_scale + mujoco_init_pos
+            target_dof_pos = np.array(action) * action_scale + init_pos
 
         viewer.sync()
         time_until_next_step = model.opt.timestep - (time.time() - step_start)

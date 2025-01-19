@@ -13,14 +13,15 @@ viewer = mujoco_viewer.MujocoViewer(model, data)
 
 target = [0] * 16
 # data.ctrl[:] = np.zeros((16))
-id = 11
+id = 4
 while True:
-    target[id] = 0.2*np.sin(2*np.pi*0.5*data.time)
+    target[id] = 0.2*np.sin(2*np.pi*0.1*data.time)
+    # target[id] = 0.2
     tau = 7*(np.array(target) - data.qpos) - 0.1*data.qvel
-    print(tau)
-    data.ctrl[:] = tau  
+    data.ctrl[:] = tau
     for i, joint_name in enumerate(mujoco_joints_order):
-        print(f"{joint_name}: {np.around(data.qpos[i], 2)}")
+        if i == id:
+            print(f"{joint_name}: pos : {np.around(data.qpos[i], 2)}, vel : {np.around(data.qvel[i], 2)}")
     print("==")
     mujoco.mj_step(model, data, 15)
     viewer.render()

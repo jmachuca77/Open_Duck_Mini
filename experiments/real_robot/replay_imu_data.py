@@ -21,7 +21,7 @@ def reorient(quat):
     """
 
     euler = R.from_quat(quat).as_euler("xyz")
-    euler = [euler[1], euler[2], euler[0]]
+    euler = [np.pi-euler[1], euler[2], -euler[0]]
     reoriented_quat = R.from_euler("xyz", euler).as_quat()
     return reoriented_quat
 
@@ -30,7 +30,10 @@ imu = np.eye(4)
 imu[:3, 3] = [0.1, 0.1, 0.1]  # just easier to see
 
 for raw_quat in data:
-    quat = reorient(raw_quat)
+    try:
+        quat = reorient(raw_quat)
+    except:
+        continue
 
     rot_mat = R.from_quat(quat).as_matrix()
     imu[:3, :3] = rot_mat
