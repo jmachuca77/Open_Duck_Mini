@@ -15,7 +15,7 @@ target = [0] * 16
 # data.ctrl[:] = np.zeros((16))
 id = 4
 while True:
-    target[id] = 0.2*np.sin(2*np.pi*0.1*data.time)
+    target[id] = 0.2*np.sin(2*np.pi*0.2*data.time)
     # target[id] = 0.2
     tau = 7*(np.array(target) - data.qpos) - 0.1*data.qvel
     data.ctrl[:] = tau

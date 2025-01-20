@@ -82,6 +82,42 @@ def get_feet_contact():
     right_contact = check_contact(data, model, "foot_assembly_2", "floor")
     return [left_contact, right_contact]
 
+def handle_keyboard():
+    global commands
+    keys = pygame.key.get_pressed()
+    lin_vel_x = 0
+    lin_vel_y = 0
+    ang_vel = 0
+    if keys[pygame.K_z]:
+        lin_vel_x = 0.3
+    if keys[pygame.K_s]:
+        lin_vel_x = -0.2
+    if keys[pygame.K_q]:
+        lin_vel_y = 0.2
+    if keys[pygame.K_d]:
+        lin_vel_y = -0.2
+    if keys[pygame.K_a]:
+        ang_vel = 0.2
+    if keys[pygame.K_e]:
+        ang_vel = -0.2
+
+    commands[0] = lin_vel_x
+    commands[1] = lin_vel_y
+    commands[2] = ang_vel
+
+    # commands = list(
+    #     np.array(commands)
+    #     * np.array(
+    #         [
+    #             linearVelocityScale,
+    #             linearVelocityScale,
+    #             angularVelocityScale,
+    #         ]
+    #     )
+    # )
+    pygame.event.pump()  # process event queue
+
+
 
 init_pos = np.array(
     [
@@ -119,15 +155,15 @@ data.ctrl[:16] = init_pos
 
 policy = OnnxInfer(args.onnx_model_path, awd=True)
 
-commands = [0.3, 0.0, 0.0]
+commands = [0.4, 0.0, 0.0]
 
 # define context variables
 prev_action = np.zeros(16)
 target_dof_pos = init_pos.copy()
-action_scale = 1
+action_scale = 0.25
 
-kps = np.array([7] * 16)
-kds = np.array([0.1] * 16)
+kps = np.array([10.7] * 16)
+kds = np.array([0.6] * 16)
 
 counter = 0
 replay_counter = 0
@@ -146,7 +182,7 @@ with mujoco.viewer.launch_passive(
             data.qvel[6:].copy(),
             kds,
         )
-        data.ctrl[:] = np.clip(tau, -3, 3)
+        data.ctrl[:] = np.clip(tau, -3.35, 3.35)
 
         mujoco.mj_step(model, data)
         counter += 1
@@ -158,12 +194,15 @@ with mujoco.viewer.launch_passive(
             else:
                 obs = get_obs(data, prev_action, commands)
             action = policy.infer(obs)
-            action = np.clip(action, -1, 1)
+            action = np.clip(action, -5, 5)
             prev_action = action.copy()
 
             target_dof_pos = np.array(action) * action_scale + init_pos
 
         viewer.sync()
+
+        if args.k:
+            handle_keyboard()
         time_until_next_step = model.opt.timestep - (time.time() - step_start)
         if time_until_next_step > 0:
             time.sleep(time_until_next_step)
