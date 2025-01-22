@@ -51,8 +51,8 @@
     <geom contype="1" conaffinity="1"/>
     <!-- <joint damping="1.44" frictionloss="0.19" armature="0.012"/>
     <position kp="19.6" kv="0.0" forcerange="-3.69 3.69"/> -->
-    <joint damping="0.1" frictionloss="0.06" armature="0.002"/>
-    <position kp="7" kv="0.3" forcerange="-3 3"/>
+    <joint damping="0.0" frictionloss="0.01" armature="0.01"/>
+    <position kp="7" kv="0.4" forcerange="-3.84 3.84"/>
   </default>
   <contact>
     <exclude name="exclude1" body1="trunk_assembly" body2="neck_yaw_assembly"/>
@@ -164,64 +164,7 @@
             </body>
           </body>
         </body>
-        <body name="hip_roll_assembly_2" pos="-0.019 -0.035 0.0459409" quat="1 0 0 0">
-          <inertial pos="0.000795081 -5.46541e-06 -0.03306" quat="0.70723 0.0130259 0.0134112 0.706737" mass="0.06648" diaginertia="2.81818e-05 2.44554e-05 1.42544e-05"/>
-          <joint name="right_hip_yaw" pos="0 0 0" axis="0 0 1" range="-0.523599 0.523599" />
-          <geom pos="0 -0.035 0.01905" type="mesh" rgba="0.647059 0.647059 0.647059 1" mesh="roll_motor_bottom"/>
-          <geom pos="0 -0.035 0.01905" type="mesh" rgba="0.901961 0.901961 0.901961 1" mesh="roll_motor_top"/>
-          <geom pos="0.0096 0 -0.020515" quat="0.5 -0.5 -0.5 -0.5" type="mesh" rgba="0.247059 0.243137 0.243137 1" mesh="wj-wk00-0123middlecase_56"/>
-          <geom pos="0.0096 0 -0.020515" quat="0.5 -0.5 -0.5 -0.5" type="mesh" rgba="0.623529 0.666667 0.701961 1" mesh="drive_palonier"/>
-          <geom pos="0.0096 0 -0.020515" quat="0.5 -0.5 -0.5 -0.5" type="mesh" rgba="0.247059 0.243137 0.243137 1" mesh="wj-wk00-0124bottomcase_45"/>
-          <geom pos="0.0096 0 -0.020515" quat="0.5 -0.5 -0.5 -0.5" type="mesh" rgba="0.247059 0.243137 0.243137 1" mesh="wj-wk00-0122topcabinetcase_95"/>
-          <geom pos="0.0125 0 -0.020515" quat="0.5 -0.5 -0.5 -0.5" type="mesh" rgba="0.623529 0.666667 0.701961 1" mesh="passive_palonier"/>
-          <body name="right_roll_to_pitch_assembly" pos="0.01905 0 -0.046015" quat="0.5 -0.5 -0.5 0.5">
-            <inertial pos="-0.0508042 -0.000420742 0.0204704" quat="0.449467 0.542039 0.549858 0.449254" mass="0.07516" diaginertia="4.13872e-05 2.82413e-05 2.51163e-05"/>
-            <joint name="right_hip_roll" pos="0 0 0" axis="0 0 1" range="-0.436332 0.436332" />
-            <geom pos="0.035 -0.065 0.01905" quat="0.5 0.5 0.5 -0.5" type="mesh" rgba="0.909804 0.572549 0.164706 1" mesh="right_roll_to_pitch"/>
-            <geom pos="-0.0647 0 0.00961" quat="0.5 -0.5 0.5 0.5" type="mesh" rgba="0.247059 0.243137 0.243137 1" mesh="wj-wk00-0123middlecase_56"/>
-            <geom pos="-0.0647 0 0.00961" quat="0.5 -0.5 0.5 0.5" type="mesh" rgba="0.623529 0.666667 0.701961 1" mesh="drive_palonier"/>
-            <geom pos="-0.0647 0 0.00961" quat="0.5 -0.5 0.5 0.5" type="mesh" rgba="0.247059 0.243137 0.243137 1" mesh="wj-wk00-0124bottomcase_45"/>
-            <geom pos="-0.0647 0 0.00961" quat="0.5 -0.5 0.5 0.5" type="mesh" rgba="0.247059 0.243137 0.243137 1" mesh="wj-wk00-0122topcabinetcase_95"/>
-            <geom pos="-0.0676 0 0.00961" quat="0.5 -0.5 0.5 0.5" type="mesh" rgba="0.623529 0.666667 0.701961 1" mesh="passive_palonier"/>
-            <body name="knee_and_ankle_assembly_3" pos="-0.07415 0 0.03511" quat="0.707107 0 0.707107 0">
-              <inertial pos="0.00253369 0.0390636 0.010809" quat="0.411107 0.577419 -0.487141 0.510169" mass="0.12407" diaginertia="0.000228782 0.00021758 7.09527e-05"/>
-              <joint name="right_hip_pitch" pos="0 0 0" axis="0 0 1" range="-0.523599 1.22173" />
-              <geom pos="0.01606 -0.065 0.1092" quat="0.707107 0.707107 0 0" type="mesh" rgba="0.917647 0.917647 0.917647 1" mesh="right_cache"/>
-              <geom pos="0.01606 -0.14365 -0.07215" quat="0.707107 0.707107 0 0" type="mesh" rgba="0.647059 0.647059 0.647059 1" mesh="leg_spacer"/>
-              <geom pos="0.01606 -0.14365 -0.07205" quat="0.707107 0.707107 0 0" type="mesh" rgba="0.223529 0.219608 0.219608 1" mesh="left_knee_to_ankle_right_sheet"/>
-              <geom pos="0.01606 -0.14365 -0.07205" quat="0.707107 0.707107 0 0" type="mesh" rgba="0.223529 0.219608 0.219608 1" mesh="left_knee_to_ankle_left_sheet"/>
-              <geom pos="0 0.05315 0.02755" quat="0.5 0.5 -0.5 -0.5" type="mesh" rgba="0.247059 0.243137 0.243137 1" mesh="wj-wk00-0123middlecase_56"/>
-              <geom pos="0 0.05315 0.02755" quat="0.5 0.5 -0.5 -0.5" type="mesh" rgba="0.623529 0.666667 0.701961 1" mesh="drive_palonier"/>
-              <geom pos="0 0.05315 0.02755" quat="0.5 0.5 -0.5 -0.5" type="mesh" rgba="0.247059 0.243137 0.243137 1" mesh="wj-wk00-0124bottomcase_45"/>
-              <geom pos="0 0.05315 0.02755" quat="0.5 0.5 -0.5 -0.5" type="mesh" rgba="0.247059 0.243137 0.243137 1" mesh="wj-wk00-0122topcabinetcase_95"/>
-              <geom pos="0 0.05315 0.03045" quat="0.5 0.5 -0.5 -0.5" type="mesh" rgba="0.623529 0.666667 0.701961 1" mesh="passive_palonier"/>
-              <body name="knee_and_ankle_assembly_4" pos="0 0.07865 0.037" quat="0 1 0 0">
-                <inertial pos="5.01859e-06 -0.0577465 0.0181136" quat="0.708422 0.705789 1.07934e-05 0.00022447" mass="0.07259" diaginertia="4.99575e-05 4.23935e-05 1.8727e-05"/>
-                <joint name="right_knee" pos="0 0 0" axis="0 0 1" range="-1.5708 1.5708" />
-                <geom pos="0.01606 0.14365 0.10925" quat="0.707107 -0.707107 0 0" type="mesh" rgba="0.647059 0.647059 0.647059 1" mesh="leg_spacer"/>
-                <geom pos="0.01606 0.14365 0.10915" quat="0.707107 -0.707107 0 0" type="mesh" rgba="0.223529 0.219608 0.219608 1" mesh="left_knee_to_ankle_right_sheet"/>
-                <geom pos="0.01606 0.14365 0.10915" quat="0.707107 -0.707107 0 0" type="mesh" rgba="0.223529 0.219608 0.219608 1" mesh="left_knee_to_ankle_left_sheet"/>
-                <geom pos="0 -0.05315 0.00955" quat="0.5 -0.5 -0.5 0.5" type="mesh" rgba="0.247059 0.243137 0.243137 1" mesh="wj-wk00-0123middlecase_56"/>
-                <geom pos="0 -0.05315 0.00955" quat="0.5 -0.5 -0.5 0.5" type="mesh" rgba="0.623529 0.666667 0.701961 1" mesh="drive_palonier"/>
-                <geom pos="0 -0.05315 0.00955" quat="0.5 -0.5 -0.5 0.5" type="mesh" rgba="0.247059 0.243137 0.243137 1" mesh="wj-wk00-0124bottomcase_45"/>
-                <geom pos="0 -0.05315 0.00955" quat="0.5 -0.5 -0.5 0.5" type="mesh" rgba="0.247059 0.243137 0.243137 1" mesh="wj-wk00-0122topcabinetcase_95"/>
-                <geom pos="0 -0.05315 0.00665" quat="0.5 -0.5 -0.5 0.5" type="mesh" rgba="0.623529 0.666667 0.701961 1" mesh="passive_palonier"/>
-                <body name="foot_assembly_2" pos="0 -0.07865 0.0001">
-                  <inertial pos="0.0110718 -0.0246608 0.0190626" quat="0.506106 0.51004 0.489653 0.49392" mass="0.07524" diaginertia="6.74949e-05 6.06095e-05 1.86965e-05"/>
-                  <joint name="right_ankle" pos="0 0 0" axis="0 0 1" range="-1.5708 1.5708" />
-                  <geom pos="0.01606 0.2223 0.10905" quat="0.707107 -0.707107 0 0" type="mesh" rgba="0.980392 0.713726 0.00392157 1" mesh="foot_side"/>
-                  <geom pos="0.01656 0.2228 0.10955" quat="0.707107 -0.707107 0 0" type="mesh" rgba="0.305882 0.298039 0.278431 1" mesh="foot_bottom_tpu"/>
-                  <geom pos="0.01656 0.2228 0.10955" quat="0.707107 -0.707107 0 0" type="mesh" rgba="0.305882 0.298039 0.278431 1" mesh="foot_bottom_pla"/>
-                  <geom pos="0.01606 0.2223 0.10905" quat="0.707107 -0.707107 0 0" type="mesh" rgba="0.980392 0.713726 0.00392157 1" mesh="foot_top"/>
-                  <body name="right_foot" pos="0.0005 -0.036225 0.01955" quat="0.707107 -0.707107 0 0">
-                    <inertial pos="0 0 0" mass="1e-09" diaginertia="0 0 0"/>
-                  </body>
-                </body>
-              </body>
-            </body>
-          </body>
-        </body>
-        <body name="neck_pitch_assembly" pos="0.001 0.01915 0.0900009" quat="0.707107 0.707107 0 0">
+                <body name="neck_pitch_assembly" pos="0.001 0.01915 0.0900009" quat="0.707107 0.707107 0 0">
           <inertial pos="-5.63137e-06 0.0492968 0.0181786" quat="0.70651 0.707703 0.000283172 6.23387e-05" mass="0.06618" diaginertia="3.49456e-05 2.80043e-05 1.70231e-05"/>
           <joint name="neck_pitch" pos="0 0 0" axis="0 0 1" range="-0.349066 1.13446" />
           <geom pos="-0.02 -0.02511 0.01905" quat="0.707107 -0.707107 0 0" type="mesh" rgba="0.223529 0.219608 0.219608 1" mesh="neck_left_sheet"/>
@@ -279,6 +222,63 @@
             </body>
           </body>
         </body>
+        <body name="hip_roll_assembly_2" pos="-0.019 -0.035 0.0459409" quat="1 0 0 0">
+          <inertial pos="0.000795081 -5.46541e-06 -0.03306" quat="0.70723 0.0130259 0.0134112 0.706737" mass="0.06648" diaginertia="2.81818e-05 2.44554e-05 1.42544e-05"/>
+          <joint name="right_hip_yaw" pos="0 0 0" axis="0 0 1" range="-0.523599 0.523599" />
+          <geom pos="0 -0.035 0.01905" type="mesh" rgba="0.647059 0.647059 0.647059 1" mesh="roll_motor_bottom"/>
+          <geom pos="0 -0.035 0.01905" type="mesh" rgba="0.901961 0.901961 0.901961 1" mesh="roll_motor_top"/>
+          <geom pos="0.0096 0 -0.020515" quat="0.5 -0.5 -0.5 -0.5" type="mesh" rgba="0.247059 0.243137 0.243137 1" mesh="wj-wk00-0123middlecase_56"/>
+          <geom pos="0.0096 0 -0.020515" quat="0.5 -0.5 -0.5 -0.5" type="mesh" rgba="0.623529 0.666667 0.701961 1" mesh="drive_palonier"/>
+          <geom pos="0.0096 0 -0.020515" quat="0.5 -0.5 -0.5 -0.5" type="mesh" rgba="0.247059 0.243137 0.243137 1" mesh="wj-wk00-0124bottomcase_45"/>
+          <geom pos="0.0096 0 -0.020515" quat="0.5 -0.5 -0.5 -0.5" type="mesh" rgba="0.247059 0.243137 0.243137 1" mesh="wj-wk00-0122topcabinetcase_95"/>
+          <geom pos="0.0125 0 -0.020515" quat="0.5 -0.5 -0.5 -0.5" type="mesh" rgba="0.623529 0.666667 0.701961 1" mesh="passive_palonier"/>
+          <body name="right_roll_to_pitch_assembly" pos="0.01905 0 -0.046015" quat="0.5 -0.5 -0.5 0.5">
+            <inertial pos="-0.0508042 -0.000420742 0.0204704" quat="0.449467 0.542039 0.549858 0.449254" mass="0.07516" diaginertia="4.13872e-05 2.82413e-05 2.51163e-05"/>
+            <joint name="right_hip_roll" pos="0 0 0" axis="0 0 1" range="-0.436332 0.436332" />
+            <geom pos="0.035 -0.065 0.01905" quat="0.5 0.5 0.5 -0.5" type="mesh" rgba="0.909804 0.572549 0.164706 1" mesh="right_roll_to_pitch"/>
+            <geom pos="-0.0647 0 0.00961" quat="0.5 -0.5 0.5 0.5" type="mesh" rgba="0.247059 0.243137 0.243137 1" mesh="wj-wk00-0123middlecase_56"/>
+            <geom pos="-0.0647 0 0.00961" quat="0.5 -0.5 0.5 0.5" type="mesh" rgba="0.623529 0.666667 0.701961 1" mesh="drive_palonier"/>
+            <geom pos="-0.0647 0 0.00961" quat="0.5 -0.5 0.5 0.5" type="mesh" rgba="0.247059 0.243137 0.243137 1" mesh="wj-wk00-0124bottomcase_45"/>
+            <geom pos="-0.0647 0 0.00961" quat="0.5 -0.5 0.5 0.5" type="mesh" rgba="0.247059 0.243137 0.243137 1" mesh="wj-wk00-0122topcabinetcase_95"/>
+            <geom pos="-0.0676 0 0.00961" quat="0.5 -0.5 0.5 0.5" type="mesh" rgba="0.623529 0.666667 0.701961 1" mesh="passive_palonier"/>
+            <body name="knee_and_ankle_assembly_3" pos="-0.07415 0 0.03511" quat="0.707107 0 0.707107 0">
+              <inertial pos="0.00253369 0.0390636 0.010809" quat="0.411107 0.577419 -0.487141 0.510169" mass="0.12407" diaginertia="0.000228782 0.00021758 7.09527e-05"/>
+              <joint name="right_hip_pitch" pos="0 0 0" axis="0 0 1" range="-0.523599 1.22173" />
+              <geom pos="0.01606 -0.065 0.1092" quat="0.707107 0.707107 0 0" type="mesh" rgba="0.917647 0.917647 0.917647 1" mesh="right_cache"/>
+              <geom pos="0.01606 -0.14365 -0.07215" quat="0.707107 0.707107 0 0" type="mesh" rgba="0.647059 0.647059 0.647059 1" mesh="leg_spacer"/>
+              <geom pos="0.01606 -0.14365 -0.07205" quat="0.707107 0.707107 0 0" type="mesh" rgba="0.223529 0.219608 0.219608 1" mesh="left_knee_to_ankle_right_sheet"/>
+              <geom pos="0.01606 -0.14365 -0.07205" quat="0.707107 0.707107 0 0" type="mesh" rgba="0.223529 0.219608 0.219608 1" mesh="left_knee_to_ankle_left_sheet"/>
+              <geom pos="0 0.05315 0.02755" quat="0.5 0.5 -0.5 -0.5" type="mesh" rgba="0.247059 0.243137 0.243137 1" mesh="wj-wk00-0123middlecase_56"/>
+              <geom pos="0 0.05315 0.02755" quat="0.5 0.5 -0.5 -0.5" type="mesh" rgba="0.623529 0.666667 0.701961 1" mesh="drive_palonier"/>
+              <geom pos="0 0.05315 0.02755" quat="0.5 0.5 -0.5 -0.5" type="mesh" rgba="0.247059 0.243137 0.243137 1" mesh="wj-wk00-0124bottomcase_45"/>
+              <geom pos="0 0.05315 0.02755" quat="0.5 0.5 -0.5 -0.5" type="mesh" rgba="0.247059 0.243137 0.243137 1" mesh="wj-wk00-0122topcabinetcase_95"/>
+              <geom pos="0 0.05315 0.03045" quat="0.5 0.5 -0.5 -0.5" type="mesh" rgba="0.623529 0.666667 0.701961 1" mesh="passive_palonier"/>
+              <body name="knee_and_ankle_assembly_4" pos="0 0.07865 0.037" quat="0 1 0 0">
+                <inertial pos="5.01859e-06 -0.0577465 0.0181136" quat="0.708422 0.705789 1.07934e-05 0.00022447" mass="0.07259" diaginertia="4.99575e-05 4.23935e-05 1.8727e-05"/>
+                <joint name="right_knee" pos="0 0 0" axis="0 0 1" range="-1.5708 1.5708" />
+                <geom pos="0.01606 0.14365 0.10925" quat="0.707107 -0.707107 0 0" type="mesh" rgba="0.647059 0.647059 0.647059 1" mesh="leg_spacer"/>
+                <geom pos="0.01606 0.14365 0.10915" quat="0.707107 -0.707107 0 0" type="mesh" rgba="0.223529 0.219608 0.219608 1" mesh="left_knee_to_ankle_right_sheet"/>
+                <geom pos="0.01606 0.14365 0.10915" quat="0.707107 -0.707107 0 0" type="mesh" rgba="0.223529 0.219608 0.219608 1" mesh="left_knee_to_ankle_left_sheet"/>
+                <geom pos="0 -0.05315 0.00955" quat="0.5 -0.5 -0.5 0.5" type="mesh" rgba="0.247059 0.243137 0.243137 1" mesh="wj-wk00-0123middlecase_56"/>
+                <geom pos="0 -0.05315 0.00955" quat="0.5 -0.5 -0.5 0.5" type="mesh" rgba="0.623529 0.666667 0.701961 1" mesh="drive_palonier"/>
+                <geom pos="0 -0.05315 0.00955" quat="0.5 -0.5 -0.5 0.5" type="mesh" rgba="0.247059 0.243137 0.243137 1" mesh="wj-wk00-0124bottomcase_45"/>
+                <geom pos="0 -0.05315 0.00955" quat="0.5 -0.5 -0.5 0.5" type="mesh" rgba="0.247059 0.243137 0.243137 1" mesh="wj-wk00-0122topcabinetcase_95"/>
+                <geom pos="0 -0.05315 0.00665" quat="0.5 -0.5 -0.5 0.5" type="mesh" rgba="0.623529 0.666667 0.701961 1" mesh="passive_palonier"/>
+                <body name="foot_assembly_2" pos="0 -0.07865 0.0001">
+                  <inertial pos="0.0110718 -0.0246608 0.0190626" quat="0.506106 0.51004 0.489653 0.49392" mass="0.07524" diaginertia="6.74949e-05 6.06095e-05 1.86965e-05"/>
+                  <joint name="right_ankle" pos="0 0 0" axis="0 0 1" range="-1.5708 1.5708" />
+                  <geom pos="0.01606 0.2223 0.10905" quat="0.707107 -0.707107 0 0" type="mesh" rgba="0.980392 0.713726 0.00392157 1" mesh="foot_side"/>
+                  <geom pos="0.01656 0.2228 0.10955" quat="0.707107 -0.707107 0 0" type="mesh" rgba="0.305882 0.298039 0.278431 1" mesh="foot_bottom_tpu"/>
+                  <geom pos="0.01656 0.2228 0.10955" quat="0.707107 -0.707107 0 0" type="mesh" rgba="0.305882 0.298039 0.278431 1" mesh="foot_bottom_pla"/>
+                  <geom pos="0.01606 0.2223 0.10905" quat="0.707107 -0.707107 0 0" type="mesh" rgba="0.980392 0.713726 0.00392157 1" mesh="foot_top"/>
+                  <body name="right_foot" pos="0.0005 -0.036225 0.01955" quat="0.707107 -0.707107 0 0">
+                    <inertial pos="0 0 0" mass="1e-09" diaginertia="0 0 0"/>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
       </body>
     </body>
   </worldbody>
@@ -288,16 +288,16 @@
     <position name="left_hip_pitch"  joint="left_hip_pitch"  inheritrange="1"/>
     <position name="left_knee"       joint="left_knee"       inheritrange="1"/>
     <position name="left_ankle"      joint="left_ankle"      inheritrange="1"/>
-    <position name="right_hip_yaw"   joint="right_hip_yaw"   inheritrange="1"/>
-    <position name="right_hip_roll"  joint="right_hip_roll"  inheritrange="1"/>
-    <position name="right_hip_pitch" joint="right_hip_pitch" inheritrange="1"/>
-    <position name="right_knee"      joint="right_knee"      inheritrange="1"/>
-    <position name="right_ankle"     joint="right_ankle"     inheritrange="1"/>
     <position name="neck_pitch"      joint="neck_pitch"      inheritrange="1"/>
     <position name="head_pitch"      joint="head_pitch"      inheritrange="1"/>
     <position name="head_yaw"        joint="head_yaw"        inheritrange="1"/>
     <position name="head_roll"       joint="head_roll"       inheritrange="1"/>
     <position name="left_antenna"    joint="left_antenna"    inheritrange="1"/>
     <position name="right_antenna"   joint="right_antenna"   inheritrange="1"/>
+    <position name="right_hip_yaw"   joint="right_hip_yaw"   inheritrange="1"/>
+    <position name="right_hip_roll"  joint="right_hip_roll"  inheritrange="1"/>
+    <position name="right_hip_pitch" joint="right_hip_pitch" inheritrange="1"/>
+    <position name="right_knee"      joint="right_knee"      inheritrange="1"/>
+    <position name="right_ankle"     joint="right_ankle"     inheritrange="1"/>
   </actuator>
 </mujoco>

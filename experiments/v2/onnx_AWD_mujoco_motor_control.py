@@ -31,9 +31,14 @@ if args.replay_obs is not None:
         replay_obs = np.array(replay_obs)
 
 
-def pd_control(target_q, q, kp, target_dq, dq, kd):
+def pd_control(target_q, q, kp, target_dq, dq, kd, clip_val, init_pos, action_scale):
     """Calculates torques from position commands"""
-    return (target_q - q) * kp + (target_dq - dq) * kd
+    tau = (target_q * action_scale + init_pos - q) * kp - (dq * kd)
+    tau = np.clip(tau, -clip_val, clip_val)
+    # tau -= dq * kd
+    # tau += (target_dq - dq) * kd
+    return tau
+    # return (target_q - q) * kp + (target_dq - dq) * kd
 
 
 def quat_rotate_inverse(q, v):
@@ -82,6 +87,7 @@ def get_feet_contact():
     right_contact = check_contact(data, model, "foot_assembly_2", "floor")
     return [left_contact, right_contact]
 
+
 def handle_keyboard():
     global commands
     keys = pygame.key.get_pressed()
@@ -118,7 +124,6 @@ def handle_keyboard():
     pygame.event.pump()  # process event queue
 
 
-
 init_pos = np.array(
     [
         0.002,
@@ -126,7 +131,7 @@ init_pos = np.array(
         -0.63,
         1.368,
         -0.784,
-        0.002,
+        0.0,
         0,
         0,
         0,
@@ -143,11 +148,13 @@ init_pos = np.array(
 model = mujoco.MjModel.from_xml_path(
     "/home/antoine/MISC/mini_BDX/mini_bdx/robots/open_duck_mini_v2/scene.xml"
 )
-model.opt.timestep = 0.01
+model.opt.timestep = 0.002
+# model.opt.timestep = 1 / 120
 # model.opt.timestep = 1 / 60  # /2 substeps ?
+model.opt.integrator = mujoco.mjtIntegrator.mjINT_IMPLICITFAST
 data = mujoco.MjData(model)
 # mujoco.mj_step(model, data)
-control_decimation = 1
+control_decimation = 10
 
 data.qpos[3 : 3 + 4] = [1, 0, 0.0, 0]
 data.qpos[7 : 7 + 16] = init_pos
@@ -155,15 +162,15 @@ data.ctrl[:16] = init_pos
 
 policy = OnnxInfer(args.onnx_model_path, awd=True)
 
-commands = [0.4, 0.0, 0.0]
+commands = [0.3, 0.0, 0.0]
 
 # define context variables
 prev_action = np.zeros(16)
 target_dof_pos = init_pos.copy()
 action_scale = 0.25
 
-kps = np.array([10.7] * 16)
-kds = np.array([0.6] * 16)
+kps = np.array([7] * 16)
+kds = np.array([0.2] * 16)
 
 counter = 0
 replay_counter = 0
@@ -181,23 +188,28 @@ with mujoco.viewer.launch_passive(
             np.zeros_like(kds),
             data.qvel[6:].copy(),
             kds,
+            3.84,
+            init_pos,
+            action_scale,
         )
-        data.ctrl[:] = np.clip(tau, -3.35, 3.35)
+        data.ctrl[:] = tau
 
         mujoco.mj_step(model, data)
         counter += 1
         get_obs(data, prev_action, commands)
-        if counter % control_decimation == 0 and time.time() - start > 2:
+        if counter % control_decimation == 0 and time.time() - start > 0:
             if args.replay_obs is not None:
                 obs = replay_obs[replay_counter]
                 replay_counter += 1
             else:
                 obs = get_obs(data, prev_action, commands)
+
+            obs = np.clip(obs, -100, 100)
             action = policy.infer(obs)
             action = np.clip(action, -5, 5)
             prev_action = action.copy()
 
-            target_dof_pos = np.array(action) * action_scale + init_pos
+            target_dof_pos = np.array(action)  # * action_scale + init_pos
 
         viewer.sync()
 
