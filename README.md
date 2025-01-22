@@ -5,6 +5,10 @@
 I'm making a miniature version of the BDX Droid by Disney. It is about 42 centimeters tall with its legs extended.
 The full BOM cost should be under $400 !
 
+> Update 22/01/2025 : The mechanical design is pretty much finalized (fixing some mistakes here and there). The current version does not include all the "expression" features we want to include in the final robot (LEDs for the eyes, a camera, a speaker and a microphone). We are now working on making it walk with reinforcement learning !
+
+> Note : The documentation is not complete yet. I would advise waiting a bit before ordering, printing and starting assembling the robot, a few things might still change.
+
 # This repo
 
 This is kind of a hub where I centralize all resources related to this project. This is a working repo, so there are a lot of undocumented scripts :) I'll try to clean things up at some point.
