@@ -9,10 +9,14 @@ from mini_bdx.utils.mujoco_utils import check_contact
 
 from mini_bdx_runtime.onnx_infer import OnnxInfer
 import pickle
+from bam.model import load_model
+from bam.mujoco import MujocoController
+from mini_bdx_runtime.rl_utils import mujoco_joints_order
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-o", "--onnx_model_path", type=str, required=True)
 parser.add_argument("-k", action="store_true", default=False)
+parser.add_argument("--bam", action="store_true", default=False)
 # parser.add_argument("--rma", action="store_true", default=False)
 # parser.add_argument("--awd", action="store_true", default=False)
 # parser.add_argument("--adaptation_module_path", type=str, required=False)
@@ -62,10 +66,18 @@ init_pos = np.array(
 model = mujoco.MjModel.from_xml_path(
     "/home/antoine/MISC/mini_BDX/mini_bdx/robots/open_duck_mini_v2/scene_position.xml"
 )
-model.opt.timestep = 0.005
+model.opt.timestep = 0.002
 # model.opt.timestep = 1 / 240
 data = mujoco.MjData(model)
 mujoco.mj_step(model, data)
+
+if args.bam :
+    sts3215_model = load_model("params_m6.json")
+    mujoco_controllers = {}
+    for joint_name in mujoco_joints_order:
+        mujoco_controllers[joint_name] = MujocoController(
+            sts3215_model, joint_name, model, data
+        )
 
 
 NUM_OBS = 56
@@ -78,7 +90,7 @@ COMMANDS_RANGE_THETA = [-0.3, 0.3]
 
 prev_action = np.zeros(16)
 commands = [0.3, 0.0, 0.0]
-decimation = 4
+decimation = 10
 data.qpos[3 : 3 + 4] = [1, 0, 0.0, 0]
 
 data.qpos[7 : 7 + 16] = init_pos
@@ -177,7 +189,7 @@ try:
         while True:
             step_start = time.time()
 
-            mujoco.mj_step(model, data)
+            mujoco.mj_step(model, data, 4)
 
             counter += 1
             if counter % decimation != 0:
@@ -194,11 +206,15 @@ try:
 
                 action = action * action_scale + init_pos
 
-                data.ctrl = action.copy()
+                if args.bam:        
+                    for i, joint_name in enumerate(mujoco_joints_order):
+                        mujoco_controllers[joint_name].update(action[i])
+                else:
+                    data.ctrl = action.copy()
 
                 if args.k:
                     handle_keyboard()
-                print(commands)
+                # print(commands)
 
                 replay_index += 1
                 if args.replay_obs is not None and replay_index >= len(replay_obs):
