@@ -66,12 +66,12 @@ init_pos = np.array(
 model = mujoco.MjModel.from_xml_path(
     "/home/antoine/MISC/mini_BDX/mini_bdx/robots/open_duck_mini_v2/scene_position.xml"
 )
-model.opt.timestep = 0.002
+model.opt.timestep = 0.005
 # model.opt.timestep = 1 / 240
 data = mujoco.MjData(model)
 mujoco.mj_step(model, data)
 
-if args.bam :
+if args.bam:
     sts3215_model = load_model("params_m6.json")
     mujoco_controllers = {}
     for joint_name in mujoco_joints_order:
@@ -90,7 +90,7 @@ COMMANDS_RANGE_THETA = [-0.3, 0.3]
 
 prev_action = np.zeros(16)
 commands = [0.3, 0.0, 0.0]
-decimation = 10
+decimation = 4
 data.qpos[3 : 3 + 4] = [1, 0, 0.0, 0]
 
 data.qpos[7 : 7 + 16] = init_pos
@@ -178,6 +178,7 @@ def handle_keyboard():
             ]
         )
     )
+    print(commands)
     pygame.event.pump()  # process event queue
 
 
@@ -187,12 +188,14 @@ try:
     ) as viewer:
         counter = 0
         while True:
-            step_start = time.time()
 
-            mujoco.mj_step(model, data, 4)
+            step_start = time.time()  # Was
+            # step_start = data.time
+
+            mujoco.mj_step(model, data)
 
             counter += 1
-            if counter % decimation != 0:
+            if counter % decimation == 0:
 
                 if args.replay_obs is not None:
                     obs = replay_obs[replay_index]
@@ -206,7 +209,7 @@ try:
 
                 action = action * action_scale + init_pos
 
-                if args.bam:        
+                if args.bam:
                     for i, joint_name in enumerate(mujoco_joints_order):
                         mujoco_controllers[joint_name].update(action[i])
                 else:
@@ -223,6 +226,11 @@ try:
             viewer.sync()
 
             # Rudimentary time keeping, will drift relative to wall clock.
+            # time_until_next_step = model.opt.timestep - (data.time - step_start)
+            # if time_until_next_step > 0:
+            #     time.sleep(time_until_next_step)
+
+            # Was
             time_until_next_step = model.opt.timestep - (time.time() - step_start)
             if time_until_next_step > 0:
                 time.sleep(time_until_next_step)

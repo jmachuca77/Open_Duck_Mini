@@ -66,7 +66,7 @@ IN THE ACTUATORS AND ALSO IN THE TREE -->
     </asset>
     <default>
         <geom contype="1" conaffinity="1" />
-        <joint damping="0.0" armature="0.01" frictionloss="0.01" />
+        <joint armature="0.01" frictionloss="0.01" />
     </default>
     <contact>
         <exclude name="exclude1" body1="trunk_assembly" body2="neck_yaw_assembly" />
