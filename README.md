@@ -29,6 +29,8 @@ See [this document](docs/prepare_robot.md) for getting from a onshape design to 
 
 We now use [AWD](https://github.com/rimim/AWD)
 
+https://github.com/user-attachments/assets/07059dbe-2ebb-4718-afe7-16ce80691073
+
 ## Actuator identification 
 
 We used Rhoban's [BAM](https://github.com/Rhoban/bam)
