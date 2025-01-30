@@ -1,4 +1,4 @@
-# Assembly guide
+# Assembly guide (INCOMPLETE)
 
 ## Requirements : 
 
