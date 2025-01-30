@@ -45,11 +45,11 @@ https://docs.google.com/spreadsheets/d/1gq4iWWHEJVgAA_eemkTEsshXqrYlFxXAPwO515Kp
 
 ## Print Guide
 
-See [this document](docs/print_guide.md).
+See [print_guide](docs/print_guide.md).
 
 ## Assembly Guide
 
-TODO
+See [assembly guide (incomplete)](docs/assembly_guide.md).
 
 # Embedded runtime
 
