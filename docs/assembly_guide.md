@@ -6,7 +6,7 @@ You will need :
 - A soldering iron, and basic electronics tools and skills
 - X m3 screws (TODO : add the exact number)
 - Some wire
-- TODO
+- Loctite Threadlocker blue 243
 
 ## Building the skeleton
 
@@ -33,7 +33,16 @@ In this part, we build the skeleton of the robot.
 
 ### Steps :
 
-TODO
+#### Mount the IMU
+
+Like this 
+
+<table>
+  <tr>
+    <td> <img src="https://github.com/user-attachments/assets/8772996d-5906-48fa-8cbe-6b6823982375" alt="1" width="500px" ></td>
+    <td> <img src="https://github.com/user-attachments/assets/172f44c7-c7c6-47f8-894a-14024abd24f4" alt="2" width="500px" ></td>
+   </tr> 
+</table>
 
 ## Electronics
 
