@@ -36,6 +36,23 @@ First, we build the robot's skeleton
 
 ### Assemble the trunk
 
+Place the bearings in `trunk_bottom` like so, and insert M3 inserts in these holes
+
+<img src="https://github.com/user-attachments/assets/9ed8591a-7c96-4410-8d7e-9b7d88c6bd1f" alt="1" width="500px" >
+
+Then assamble `trunk_bottom` and `trunk_top`, and screw them together with 2 `M3x6` screws through these holes
+
+<img src="https://github.com/user-attachments/assets/ae36b396-a34a-4691-8e62-fd916cd1f76c" alt="1" width="500px" >
+
+Mount the middle motor like so and screw it with the plastic screws that came with the motors : 
+
+<img src="https://github.com/user-attachments/assets/d4a6ba6c-852f-440e-afb7-3b9ca66ad3dc" alt="1" width="500px" >
+
+Insert `roll_motor_bottom` like this 
+
+<img src="https://github.com/user-attachments/assets/31c031b7-58b8-4c4c-a3fa-1f14a310c2f2" alt="1" width="500px" >
+
+
 ### Assemble the feet
 
 Both feet are the same. 
