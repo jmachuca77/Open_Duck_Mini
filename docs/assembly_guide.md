@@ -8,11 +8,9 @@ You will need :
 - Some wire
 - Loctite Threadlocker blue 243
 
-## Building the skeleton
+First, we build the robot's skeleton 
 
-In this part, we build the skeleton of the robot.
-
-### Parts needed : 
+## Parts needed : 
 - foot_top.stl x2
 - foot_side.stl x2
 - foot_bottom_tpu.stl x2 (TPU)
@@ -31,9 +29,21 @@ In this part, we build the skeleton of the robot.
 - head_yaw_to_roll.stl x1
 - head_roll_mount.stl x1
 
-### Steps :
+> General note : Everytime you screw something in the motors, you want to use a little loctite threadlocker. This will prevent the screws from coming loose due to the vibrations during the operation of the robot. It adds a little time to to the build, but you'll be glad you took the time ;)
 
-#### Mount the IMU
+## Steps :
+
+### Assemble the trunk
+
+### Assemble the feet
+
+### Assemble the shins
+
+### Assemble the thighs 
+
+### Assemble the hips
+
+### Mount the IMU
 
 Like this 
 
@@ -46,8 +56,10 @@ Like this
 
 ## Electronics
 
-TODO
+### Battery pack
 
-## Final assembly
+### Head
 
-TODO
+## The rest
+
+Body parts
