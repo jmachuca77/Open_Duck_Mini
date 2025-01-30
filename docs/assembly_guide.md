@@ -157,7 +157,9 @@ Your duck should now look like this
 
 <img src="https://github.com/user-attachments/assets/71545d40-f0f5-411d-a8d5-1cd676a74e75" alt="1" width="500px" >
 
+### Mount the servo driver board
 
+TODO take a photo
 
 ### Mount the IMU
 
