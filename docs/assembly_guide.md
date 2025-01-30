@@ -32,6 +32,8 @@ First, we build the robot's skeleton
 
 > General note : Everytime you screw something in the motors, you want to use a little loctite threadlocker. This will prevent the screws from coming loose due to the vibrations during the operation of the robot. It adds a little time to to the build, but you'll be glad you took the time ;)
 
+> At any time, you can refer to the CAD here : https://cad.onshape.com/documents/64074dfcfa379b37d8a47762/w/3650ab4221e215a4f65eb7fe/e/0505c262d882183a25049d05
+
 ## Steps :
 
 ### Assemble the trunk
@@ -126,6 +128,35 @@ And do the same for the other leg :)
 Your duck should now look like this 
 
 <img src="https://github.com/user-attachments/assets/4921b29b-b38b-423d-9da1-1c8f84689e84" alt="1" width="500px" >
+
+### Assemble the neck
+
+You know the drill
+
+<img src="https://github.com/user-attachments/assets/f96fe44f-a7bc-423e-a925-4aef3e7bf568" alt="1" width="500px" >
+
+### Assemble the head
+
+First, mount `head_pitch_to_yaw` like this 
+
+<img src="https://github.com/user-attachments/assets/a4dba395-eb0d-4150-8980-8e14f1173d02" alt="1" width="500px" >
+
+Then, independently mount `head_yaw_to_roll` and `head_roll_mount` to `head_roll dof`
+
+<img src="https://github.com/user-attachments/assets/4648cd6c-391e-41e4-9617-4ecebfa9215b" alt="1" width="500px" >
+
+Then 
+
+<img src="https://github.com/user-attachments/assets/03f3bdae-06c3-4c37-b68f-14587edd6123" alt="1" width="500px" >
+
+Then 
+
+<img src="https://github.com/user-attachments/assets/04a219d8-bbaf-4910-b5d3-7ca67bce466c" alt="1" width="500px" >
+
+Your duck should now look like this 
+
+<img src="https://github.com/user-attachments/assets/71545d40-f0f5-411d-a8d5-1cd676a74e75" alt="1" width="500px" >
+
 
 
 ### Mount the IMU
