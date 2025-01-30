@@ -90,11 +90,38 @@ Then assemble like below:
 
 <img src="https://github.com/user-attachments/assets/54615217-fec9-46dd-8b40-e21a4f527b55" alt="1" width="500px" >
 
-
-
 ### Assemble the thighs 
 
+The thigh is pretty much the same thing, except the `hip_pitch` motor is mounted this way (important for the zero position)
+
+<img src="https://github.com/user-attachments/assets/951157a4-26dc-41bb-b97f-18dbbb0c1cd3" alt="1" width="500px" >
+
 ### Assemble the hips
+
+Mount `left_roll_to_pitch` or `right_roll_to_pitch`, here the parts are symmetrical so you have to use the right one.
+
+<img src="https://github.com/user-attachments/assets/368a85ad-1c58-4db2-bdd0-812334b6c784" alt="1" width="500px" >
+
+Mount `roll_motor_top` to the `hip_yaw` servo (screw from the bottom). Don't mount the servo to the trunk yet.
+
+
+<img src="https://github.com/user-attachments/assets/768f1664-030c-4432-9071-c52d79d3ef6b" alt="1" width="500px" >
+
+Then mount `hip_roll` like this 
+
+<img src="https://github.com/user-attachments/assets/e1287f67-320c-42cf-a5dc-84f4c64abb17" alt="1" width="500px" >
+
+And insert the sub assembly like this 
+
+<img src="https://github.com/user-attachments/assets/dba458ae-e9cb-4e16-a82e-cbe74d2350fa" alt="1" width="500px" >
+
+Screw everything you can (with the plastic screws provided with the servos)
+
+You can now mount the leg like this :
+
+<img src="https://github.com/user-attachments/assets/a7169791-9f0a-4827-aea7-00ab1d0f6212" alt="1" width="500px" >
+
+And do the same for the other leg :)
 
 ### Mount the IMU
 
