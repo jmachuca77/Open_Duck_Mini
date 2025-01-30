@@ -78,6 +78,20 @@ And assemble everything like so. Make sure the driver side of the motor is on th
 
 ### Assemble the shins
 
+Insert M3 Inserts in these holes of `leg_spacer` (on both sides. Insert 4 M3 inserts in total) :
+
+<img src="https://github.com/user-attachments/assets/41eb01a2-d6f9-43b1-a83e-d14785907425" alt="1" width="500px" >
+
+Then, first plug the motor cable in the foot's motor, and make it go through the `right_sheet` like so 
+
+<img src="https://github.com/user-attachments/assets/a1432505-6b6c-4765-aea6-0a7a0b8b220b" alt="1" width="500px" >
+
+Then assemble like below:
+
+<img src="https://github.com/user-attachments/assets/54615217-fec9-46dd-8b40-e21a4f527b55" alt="1" width="500px" >
+
+
+
 ### Assemble the thighs 
 
 ### Assemble the hips
