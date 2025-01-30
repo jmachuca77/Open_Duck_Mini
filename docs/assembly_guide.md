@@ -123,6 +123,11 @@ You can now mount the leg like this :
 
 And do the same for the other leg :)
 
+Your duck should now look like this 
+
+<img src="https://github.com/user-attachments/assets/4921b29b-b38b-423d-9da1-1c8f84689e84" alt="1" width="500px" >
+
+
 ### Mount the IMU
 
 Like this 
