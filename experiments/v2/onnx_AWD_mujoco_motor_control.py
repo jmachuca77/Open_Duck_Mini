@@ -15,6 +15,9 @@ parser = argparse.ArgumentParser()
 parser.add_argument("-o", "--onnx_model_path", type=str, required=True)
 parser.add_argument("-k", action="store_true", default=False)
 parser.add_argument("--replay_obs", type=str, required=False, default=None)
+parser.add_argument("--rma", action="store_true", default=False)
+parser.add_argument("--adaptation_module_path", type=str, required=False)
+parser.add_argument("--zero_head", action="store_true", default=False)
 args = parser.parse_args()
 
 if args.k:
@@ -33,9 +36,9 @@ if args.replay_obs is not None:
 
 def pd_control(target_q, q, kp, target_dq, dq, kd, clip_val, init_pos, action_scale):
     """Calculates torques from position commands"""
-    tau = (target_q * action_scale + init_pos - q) * kp - (dq * kd)
+    tau = (target_q * action_scale + init_pos - q) * kp# - (dq * kd)
     tau = np.clip(tau, -clip_val, clip_val)
-    # tau -= dq * kd
+    tau -= dq * kd
     # tau += (target_dq - dq) * kd
     return tau
     # return (target_q - q) * kp + (target_dq - dq) * kd
@@ -87,6 +90,14 @@ def get_feet_contact():
     right_contact = check_contact(data, model, "foot_assembly_2", "floor")
     return [left_contact, right_contact]
 
+def set_zero_head(pos):
+    pos[5] = np.deg2rad(10)
+    pos[6] = np.deg2rad(-10)
+    # pos[5] = 0
+    # pos[6] = 0
+    pos[7] = 0
+    pos[8] = 0
+    return pos
 
 def handle_keyboard():
     global commands
@@ -148,36 +159,49 @@ init_pos = np.array(
 model = mujoco.MjModel.from_xml_path(
     "/home/antoine/MISC/mini_BDX/mini_bdx/robots/open_duck_mini_v2/scene.xml"
 )
-model.opt.timestep = 0.002
+# model = mujoco.MjModel.from_xml_path(
+#     "/home/antoine/MISC/mujoco_menagerie/open_duck_mini_v2/scene.xml"
+# )
+model.opt.timestep = 0.005
 # model.opt.timestep = 1 / 120
 # model.opt.timestep = 1 / 60  # /2 substeps ?
-model.opt.integrator = mujoco.mjtIntegrator.mjINT_IMPLICITFAST
+# model.opt.integrator = mujoco.mjtIntegrator.mjINT_IMPLICITFAST
 data = mujoco.MjData(model)
 # mujoco.mj_step(model, data)
-control_decimation = 10
+control_decimation = 4
 
 data.qpos[3 : 3 + 4] = [1, 0, 0.0, 0]
 data.qpos[7 : 7 + 16] = init_pos
 data.ctrl[:16] = init_pos
 
-policy = OnnxInfer(args.onnx_model_path, awd=True)
+NUM_OBS = 56
 
-commands = [0.3, 0.0, 0.0]
+policy = OnnxInfer(args.onnx_model_path, awd=True)
+if args.rma:
+    adaptation_module = OnnxInfer(args.adaptation_module_path, "rma_history", awd=True)
+    obs_history_size = 20
+    obs_history = np.zeros((obs_history_size, NUM_OBS)).tolist()
+    rma_decimation = 5  # 10 hz if control_decimation = 4
+    rma_counter = 0
+
+commands = [0.2, 0.0, 0.0]
 
 # define context variables
 prev_action = np.zeros(16)
 target_dof_pos = init_pos.copy()
-action_scale = 0.25
+action_scale = 0.5
 
-kps = np.array([7] * 16)
-kds = np.array([0.2] * 16)
+kps = np.array([6.55] * 16)
+kds = np.array([0.65] * 16)
 
 counter = 0
 replay_counter = 0
+latent = None
 start = time.time()
 with mujoco.viewer.launch_passive(
     model, data, show_left_ui=False, show_right_ui=False
 ) as viewer:
+    adaptation_module_latents = []
     while True:
         step_start = time.time()
 
@@ -188,7 +212,7 @@ with mujoco.viewer.launch_passive(
             np.zeros_like(kds),
             data.qvel[6:].copy(),
             kds,
-            3.84,
+            3.57,
             init_pos,
             action_scale,
         )
@@ -196,18 +220,36 @@ with mujoco.viewer.launch_passive(
 
         mujoco.mj_step(model, data)
         counter += 1
-        get_obs(data, prev_action, commands)
+
         if counter % control_decimation == 0 and time.time() - start > 0:
             if args.replay_obs is not None:
                 obs = replay_obs[replay_counter]
                 replay_counter += 1
             else:
                 obs = get_obs(data, prev_action, commands)
+            if args.rma:
+                rma_counter += 1
+
+                # Shift to right and set new obs at index 0
+                obs_history = np.roll(obs_history, 1, axis=0)
+                obs_history[0] = obs
+
+                # obs_history.append(obs)
+                # obs_history = obs_history[-obs_history_size:]
+
+                if rma_counter % rma_decimation == 0 or latent is None:
+                    latent = adaptation_module.infer(np.array(obs_history).flatten())
+                    adaptation_module_latents.append(latent)
+                    pickle.dump(adaptation_module_latents, open("adaptation_module_latents.pkl", "wb"))
+                obs = np.concatenate([obs, latent])
 
             obs = np.clip(obs, -100, 100)
             action = policy.infer(obs)
             action = np.clip(action, -5, 5)
+            if args.zero_head:
+                action = set_zero_head(action)
             prev_action = action.copy()
+
 
             target_dof_pos = np.array(action)  # * action_scale + init_pos
 

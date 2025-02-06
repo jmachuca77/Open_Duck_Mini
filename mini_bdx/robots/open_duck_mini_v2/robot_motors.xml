@@ -66,7 +66,7 @@ IN THE ACTUATORS AND ALSO IN THE TREE -->
     </asset>
     <default>
         <geom contype="1" conaffinity="1" />
-        <joint armature="0.01" frictionloss="0.01" />
+        <joint damping="0.0" armature="0.027" frictionloss="0.083" />
     </default>
     <contact>
         <exclude name="exclude1" body1="trunk_assembly" body2="neck_yaw_assembly" />
@@ -106,7 +106,7 @@ IN THE ACTUATORS AND ALSO IN THE TREE -->
     </contact>
     <worldbody>
         <body name="base" pos="0 0 0.17">
-            <!-- <body name="base" pos="0 0 0.4"> -->
+        <!-- <body name="base" pos="0 0 0.4"> -->
             <freejoint />
             <body name="trunk_assembly">
                 <inertial

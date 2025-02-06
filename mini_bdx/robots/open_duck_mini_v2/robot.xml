@@ -51,8 +51,8 @@
     <geom contype="1" conaffinity="1"/>
     <!-- <joint damping="1.44" frictionloss="0.19" armature="0.012"/>
     <position kp="19.6" kv="0.0" forcerange="-3.69 3.69"/> -->
-    <joint damping="0.0" frictionloss="0.01" armature="0.01"/>
-    <position kp="9.5" kv="0.3" forcerange="-5.2 5.2"/>
+    <joint damping="1.0" frictionloss="0.01" armature="0.01"/>
+    <position kp="9.5" kv="0.0" forcerange="-5.2 5.2"/>
   </default>
   <contact>
     <exclude name="exclude1" body1="trunk_assembly" body2="neck_yaw_assembly"/>
@@ -67,9 +67,9 @@
     <exclude name="exclude10" body1="head_pitch_to_yaw" body2="head_assembly"/>
   </contact>
   <worldbody>
-    <body name="base" pos="0 0 0.22">
-    <!-- <body name="base" pos="0 0 0.4"> -->
-      <freejoint />
+    <!-- <body name="base" pos="0 0 0.22"> -->
+    <body name="base" pos="0 0 0.4">
+      <!-- <freejoint /> -->
       <body name="trunk_assembly">
         <inertial pos="-0.0483259 -9.97823e-05 0.0384971" quat="0.505499 0.490695 0.496207 0.507413" mass="0.698526" diaginertia="0.00344489 0.00292719 0.00167606"/>
         <geom pos="-0.019 0 0.0648909" type="mesh" rgba="0.917647 0.917647 0.917647 1" mesh="body_front"/>

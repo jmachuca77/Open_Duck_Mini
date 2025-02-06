@@ -63,8 +63,11 @@ init_pos = np.array(
     ]
 )
 
+# model = mujoco.MjModel.from_xml_path(
+#     "/home/antoine/MISC/mini_BDX/mini_bdx/robots/open_duck_mini_v2/scene_position.xml"
+# )
 model = mujoco.MjModel.from_xml_path(
-    "/home/antoine/MISC/mini_BDX/mini_bdx/robots/open_duck_mini_v2/scene_position.xml"
+    "/home/antoine/MISC/mujoco_menagerie/open_duck_mini_v2/scene.xml"
 )
 model.opt.timestep = 0.005
 # model.opt.timestep = 1 / 240
@@ -203,17 +206,18 @@ try:
                     obs = get_obs(data, prev_action, commands)
                     saved_obs.append(obs)
 
+                obs = list(obs) + list(np.zeros(18))
                 action = policy.infer(obs)
 
                 prev_action = action.copy()
 
                 action = action * action_scale + init_pos
 
-                if args.bam:
-                    for i, joint_name in enumerate(mujoco_joints_order):
-                        mujoco_controllers[joint_name].update(action[i])
-                else:
-                    data.ctrl = action.copy()
+                # if args.bam:
+                #     for i, joint_name in enumerate(mujoco_joints_order):
+                #         mujoco_controllers[joint_name].update(action[i])
+                # else:
+                #     data.ctrl = action.copy()
 
                 if args.k:
                     handle_keyboard()

@@ -21,7 +21,7 @@ def reorient(quat):
     """
 
     euler = R.from_quat(quat).as_euler("xyz")
-    euler = [np.pi-euler[1], euler[2], -euler[0]]
+    # euler = [np.pi-euler[1], euler[2], -euler[0]]
     reoriented_quat = R.from_euler("xyz", euler).as_quat()
     return reoriented_quat
 
