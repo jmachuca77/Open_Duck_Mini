@@ -1,6 +1,12 @@
 # Open Duck Mini v2
 
-![Capture d’écran du 2025-01-14 15-44-05](https://github.com/user-attachments/assets/d8e6c804-8b2a-4a32-8d05-eab38d4ba475)
+<table>
+  <tr>
+    <td> <img src="https://github.com/user-attachments/assets/1cec3e46-de46-4abb-9c9e-20f936f15121" alt="1" width="300px" ></td>
+    <td> <img src="https://github.com/user-attachments/assets/d2588204-32db-47c1-9ac5-2d2f71dbb98a" alt="2" width="300px" ></td>
+    <td> <img src="https://github.com/user-attachments/assets/94fbd245-655e-4465-a727-950a89ff02c2" alt="3" width="300px" ></td>
+   </tr> 
+</table>
 
 I'm making a miniature version of the BDX Droid by Disney. It is about 42 centimeters tall with its legs extended.
 The full BOM cost should be under $400 !
@@ -23,6 +29,8 @@ See [this document](docs/prepare_robot.md) for getting from a onshape design to 
 
 We now use [AWD](https://github.com/rimim/AWD)
 
+https://github.com/user-attachments/assets/07059dbe-2ebb-4718-afe7-16ce80691073
+
 ## Actuator identification 
 
 We used Rhoban's [BAM](https://github.com/Rhoban/bam)
@@ -37,11 +45,11 @@ https://docs.google.com/spreadsheets/d/1gq4iWWHEJVgAA_eemkTEsshXqrYlFxXAPwO515Kp
 
 ## Print Guide
 
-See [this document](docs/print_guide.md).
+See [print_guide](docs/print_guide.md).
 
 ## Assembly Guide
 
-TODO
+See [assembly guide (incomplete)](docs/assembly_guide.md).
 
 # Embedded runtime
 
