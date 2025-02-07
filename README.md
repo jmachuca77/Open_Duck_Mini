@@ -37,8 +37,6 @@ We used Rhoban's [BAM](https://github.com/Rhoban/bam)
 
 # BOM
 
-> The BOM is not yet fully finalized, wait a bit before ordering stuff
-
 https://docs.google.com/spreadsheets/d/1gq4iWWHEJVgAA_eemkTEsshXqrYlFxXAPwO515KpCJc/edit?usp=sharing
 
 # Build Guide
