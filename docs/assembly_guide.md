@@ -38,7 +38,7 @@ First, we build the robot's skeleton
 
 ### Assemble the trunk
 
-Place the bearings in `trunk_bottom` like so, and insert M3 inserts in these holes
+Place the bearings in `trunk_bottom` like so, and insert M3 inserts in these holes. It's also a good time to insert the 4 M3 inserts in the bottom of this part to mount body parts later on.
 
 <img src="https://github.com/user-attachments/assets/9ed8591a-7c96-4410-8d7e-9b7d88c6bd1f" alt="1" width="500px" >
 
@@ -212,7 +212,9 @@ First screw on `body_middle_bottom`
 
 ![Capture d’écran du 2025-02-09 12-10-00](https://github.com/user-attachments/assets/081d8840-8e88-4938-9d9a-4d97614e6261)
 
-Then `body_middle_top`, `body_front` and the battery pack
+Then insert the M3 inserts in all the holes of `body_middle_bottom` and `body_middle_top` on which we'll mount the battery pack and `body_front`.
+
+Then mount `body_middle_top`, `body_front` and the battery pack
 
 <table>
   <tr>
