@@ -8,28 +8,6 @@ You will need :
 - Some wire
 - Loctite Threadlocker blue 243
 
-First, we build the robot's skeleton 
-
-## Parts needed : 
-- foot_top.stl x2
-- foot_side.stl x2
-- foot_bottom_tpu.stl x2 (TPU)
-- foot_bottom_pla.stl x2
-- knee_to_ankle_left_sheet.stl x4
-- knee_to_ankle_right_sheet.stl x4
-- leg_spacer.stl x4
-- left_roll_to_pitch.stl x1
-- right_roll_to_pitch.stl x1
-- roll_motor_bottom.stl x2
-- roll_motor_top.stl x2
-- trunk_bottom.stl x1
-- trunk_top.stl x1
-- neck_left_sheet.stl x1
-- neck_right_sheet.stl x1
-- head_pitch_to_yaw.stl x1
-- head_yaw_to_roll.stl x1
-- head_roll_mount.stl x1
-
 > General note : Everytime you screw something in the motors, you want to use a little loctite threadlocker. This will prevent the screws from coming loose due to the vibrations during the operation of the robot. It adds a little time to to the build, but you'll be glad you took the time ;)
 
 > At any time, you can refer to the CAD here : https://cad.onshape.com/documents/64074dfcfa379b37d8a47762/w/3650ab4221e215a4f65eb7fe/e/0505c262d882183a25049d05
@@ -199,7 +177,12 @@ Here is the global electonics schematic for reference
 
 ### Head
 
-First insert the bearing, mount the ear motors and the raspberry pi zero 2w.
+First, insert the M3 inserts in all these holes 
+
+![image](https://github.com/user-attachments/assets/ef4cd513-6b8d-41fa-9cc3-149fc8333d3e)
+
+
+Then insert the bearing, mount the ear motors and the raspberry pi zero 2w.
 
 Then assemble the neck with the head like this
 
