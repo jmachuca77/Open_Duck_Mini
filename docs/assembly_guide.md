@@ -42,7 +42,7 @@ Place the bearings in `trunk_bottom` like so, and insert M3 inserts in these hol
 
 <img src="https://github.com/user-attachments/assets/9ed8591a-7c96-4410-8d7e-9b7d88c6bd1f" alt="1" width="500px" >
 
-Then assamble `trunk_bottom` and `trunk_top`, and screw them together with 2 `M3x6` screws through these holes
+Then assamble `trunk_bottom` and `trunk_top`, and screw them together with 2 `M3x10` screws through these holes
 
 <img src="https://github.com/user-attachments/assets/ae36b396-a34a-4691-8e62-fd916cd1f76c" alt="1" width="500px" >
 
