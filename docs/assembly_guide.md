@@ -145,7 +145,7 @@ Then, independently mount `head_yaw_to_roll` and `head_roll_mount` to `head_roll
 
 <img src="https://github.com/user-attachments/assets/4648cd6c-391e-41e4-9617-4ecebfa9215b" alt="1" width="500px" >
 
-(You can insert `head_bot_plate` now too to avoid having to disassamble the head later)
+(You can insert `head_bot_plate` and `body_middle_top` now too to avoid having to disassamble the head later)
 
 Then 
 
@@ -206,6 +206,21 @@ Then assemble the neck with the head like this
 ![image](https://github.com/user-attachments/assets/96fd5347-bff7-47e9-a7bd-fde17ab1bcd2)
 
 
-## The rest
+## Body
 
-Body parts
+First screw on `body_middle_bottom`
+
+![Capture d’écran du 2025-02-09 12-10-00](https://github.com/user-attachments/assets/081d8840-8e88-4938-9d9a-4d97614e6261)
+
+Then `body_middle_top`, `body_front` and the battery pack
+
+<table>
+  <tr>
+    <td> <img src="https://github.com/user-attachments/assets/679a9cd2-89ca-41e8-9d03-f93fc040068b" alt="1" width="500px" ></td>
+    <td> <img src="https://github.com/user-attachments/assets/ca292c48-1c72-4649-b7d1-4d3c9eac62ac" alt="2" width="500px" ></td>
+   </tr> 
+</table>
+
+
+
+
