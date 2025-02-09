@@ -208,7 +208,9 @@ Then mount `body_middle_top`, `body_front` and the battery pack
 
 Et voila :) 
 
-![image](https://github.com/user-attachments/assets/864d9dd7-3daf-4e63-913c-2e99157e4aaf)
-
-
-
+<table>
+  <tr>
+    <td> <img src="https://github.com/user-attachments/assets/312ec747-8eb4-4145-92eb-c1c3ddba80da" alt="1" width="500px" ></td>
+    <td> <img src="https://github.com/user-attachments/assets/864d9dd7-3daf-4e63-913c-2e99157e4aaf" alt="2" width="500px" ></td>
+   </tr> 
+</table>
