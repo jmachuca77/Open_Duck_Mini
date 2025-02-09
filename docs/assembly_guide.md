@@ -145,6 +145,8 @@ Then, independently mount `head_yaw_to_roll` and `head_roll_mount` to `head_roll
 
 <img src="https://github.com/user-attachments/assets/4648cd6c-391e-41e4-9617-4ecebfa9215b" alt="1" width="500px" >
 
+(You can insert `head_bot_plate` now too to avoid having to disassamble the head later)
+
 Then 
 
 <img src="https://github.com/user-attachments/assets/03f3bdae-06c3-4c37-b68f-14587edd6123" alt="1" width="500px" >
@@ -174,7 +176,26 @@ Like this
 
 ## Electronics
 
+Here is the global electonics schematic for reference 
+
+<table>
+  <tr>
+    <td> <img src="open_duck_mini_v2_wiring_diagram.png" alt="1" width="500px" ></td>
+    <td> <img src="wiring.png" alt="2" width="500px" ></td>
+   </tr> 
+</table>
+
 ### Battery pack
+
+> To be safe, make sure your cells are charged to the same voltage before placing them in the holder.
+
+<table>
+  <tr>
+    <td> <img src="https://github.com/user-attachments/assets/371db809-7cb3-47e1-b277-7fc2bdf21025" alt="1" width="500px" ></td>
+    <td> <img src="https://github.com/user-attachments/assets/3acfa4e6-ecf7-41f6-a965-35a3040f52fb" alt="2" width="500px" ></td>
+   </tr> 
+</table>
+
 
 ### Head
 
