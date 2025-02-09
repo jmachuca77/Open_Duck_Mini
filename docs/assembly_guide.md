@@ -199,6 +199,13 @@ Here is the global electonics schematic for reference
 
 ### Head
 
+First insert the bearing, mount the ear motors and the raspberry pi zero 2w.
+
+Then assemble the neck with the head like this
+
+![image](https://github.com/user-attachments/assets/96fd5347-bff7-47e9-a7bd-fde17ab1bcd2)
+
+
 ## The rest
 
 Body parts
