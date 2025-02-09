@@ -1,4 +1,4 @@
-# Assembly guide (INCOMPLETE)
+# Assembly guide
 
 ## Requirements : 
 
@@ -206,6 +206,9 @@ Then mount `body_middle_top`, `body_front` and the battery pack
    </tr> 
 </table>
 
+Et voila :) 
+
+![image](https://github.com/user-attachments/assets/864d9dd7-3daf-4e63-913c-2e99157e4aaf)
 
 
 
