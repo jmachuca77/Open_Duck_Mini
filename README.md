@@ -35,7 +35,9 @@ We are still working with [AWD](https://github.com/rimim/AWD) too
 
 https://github.com/user-attachments/assets/07059dbe-2ebb-4718-afe7-16ce80691073
 
-## Reference motion generation imitation learning 
+## Reference motion generation for imitation learning 
+
+https://github.com/user-attachments/assets/4cb52e17-99a5-47a8-b841-4141596b7afb
 
 See [this repo](https://github.com/apirrone/Open_Duck_reference_motion_generator)
 
