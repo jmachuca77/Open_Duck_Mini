@@ -29,15 +29,15 @@ See [this document](docs/prepare_robot.md) for getting from a onshape design to 
 
 We are switching to Mujoco Playground, see this [repo](https://github.com/SteveNguyen/openduckminiv2_playground/tree/imitation_reward)
 
-
-
 https://github.com/user-attachments/assets/293ed5f2-bd24-472e-b44d-c2e4153b8cba
-
-
 
 We are still working with [AWD](https://github.com/rimim/AWD) too
 
 https://github.com/user-attachments/assets/07059dbe-2ebb-4718-afe7-16ce80691073
+
+## Reference motion generation imitation learning 
+
+See [this repo](https://github.com/apirrone/Open_Duck_reference_motion_generator)
 
 ## Actuator identification 
 
