@@ -175,8 +175,10 @@ class PlacoWalkEngine:
         if "trunk_mode" in data:
             params.trunk_mode = data.get("trunk_mode")
 
-    def get_angles(self):
+    def get_angles(self, ignore=[]):
         angles = {joint: self.robot.get_joint(joint) for joint in self.joints}
+        for joint in ignore:
+            angles.pop(joint, None)
         return angles
 
     def reset(self):
