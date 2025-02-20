@@ -11,9 +11,9 @@
 I'm making a miniature version of the BDX Droid by Disney. It is about 42 centimeters tall with its legs extended.
 The full BOM cost should be under $400 !
 
-> Update 22/01/2025 : The mechanical design is pretty much finalized (fixing some mistakes here and there). The current version does not include all the "expression" features we want to include in the final robot (LEDs for the eyes, a camera, a speaker and a microphone). We are now working on making it walk with reinforcement learning !
+> Update 07/02/2025 : I'm writing documentation on the go, but the design and BOM should not change drastically. Still missing the "expression" features, but they can be added after building the robot!
 
-> Note : The documentation is not complete yet. I would advise waiting a bit before ordering, printing and starting assembling the robot, a few things might still change.
+> Update 22/01/2025 : The mechanical design is pretty much finalized (fixing some mistakes here and there). The current version does not include all the "expression" features we want to include in the final robot (LEDs for the eyes, a camera, a speaker and a microphone). We are now working on making it walk with reinforcement learning !
 
 # This repo
 
@@ -27,17 +27,25 @@ See [this document](docs/prepare_robot.md) for getting from a onshape design to 
 
 # RL stuff
 
-We now use [AWD](https://github.com/rimim/AWD)
+We are switching to Mujoco Playground, see this [repo](https://github.com/SteveNguyen/openduckminiv2_playground/tree/imitation_reward)
+
+https://github.com/user-attachments/assets/293ed5f2-bd24-472e-b44d-c2e4153b8cba
+
+We are still working with [AWD](https://github.com/rimim/AWD) too
 
 https://github.com/user-attachments/assets/07059dbe-2ebb-4718-afe7-16ce80691073
+
+## Reference motion generation for imitation learning 
+
+https://github.com/user-attachments/assets/4cb52e17-99a5-47a8-b841-4141596b7afb
+
+See [this repo](https://github.com/apirrone/Open_Duck_reference_motion_generator)
 
 ## Actuator identification 
 
 We used Rhoban's [BAM](https://github.com/Rhoban/bam)
 
 # BOM
-
-> The BOM is not yet fully finalized, wait a bit before ordering stuff
 
 https://docs.google.com/spreadsheets/d/1gq4iWWHEJVgAA_eemkTEsshXqrYlFxXAPwO515KpCJc/edit?usp=sharing
 

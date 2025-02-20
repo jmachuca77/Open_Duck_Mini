@@ -1,4 +1,4 @@
-# Assembly guide (INCOMPLETE)
+# Assembly guide
 
 ## Requirements : 
 
@@ -8,28 +8,6 @@ You will need :
 - Some wire
 - Loctite Threadlocker blue 243
 
-First, we build the robot's skeleton 
-
-## Parts needed : 
-- foot_top.stl x2
-- foot_side.stl x2
-- foot_bottom_tpu.stl x2 (TPU)
-- foot_bottom_pla.stl x2
-- knee_to_ankle_left_sheet.stl x4
-- knee_to_ankle_right_sheet.stl x4
-- leg_spacer.stl x4
-- left_roll_to_pitch.stl x1
-- right_roll_to_pitch.stl x1
-- roll_motor_bottom.stl x2
-- roll_motor_top.stl x2
-- trunk_bottom.stl x1
-- trunk_top.stl x1
-- neck_left_sheet.stl x1
-- neck_right_sheet.stl x1
-- head_pitch_to_yaw.stl x1
-- head_yaw_to_roll.stl x1
-- head_roll_mount.stl x1
-
 > General note : Everytime you screw something in the motors, you want to use a little loctite threadlocker. This will prevent the screws from coming loose due to the vibrations during the operation of the robot. It adds a little time to to the build, but you'll be glad you took the time ;)
 
 > At any time, you can refer to the CAD here : https://cad.onshape.com/documents/64074dfcfa379b37d8a47762/w/3650ab4221e215a4f65eb7fe/e/0505c262d882183a25049d05
@@ -38,11 +16,11 @@ First, we build the robot's skeleton
 
 ### Assemble the trunk
 
-Place the bearings in `trunk_bottom` like so, and insert M3 inserts in these holes
+Place the bearings in `trunk_bottom` like so, and insert M3 inserts in these holes. It's also a good time to insert the 4 M3 inserts in the bottom of this part to mount body parts later on.
 
 <img src="https://github.com/user-attachments/assets/9ed8591a-7c96-4410-8d7e-9b7d88c6bd1f" alt="1" width="500px" >
 
-Then assamble `trunk_bottom` and `trunk_top`, and screw them together with 2 `M3x6` screws through these holes
+Then assamble `trunk_bottom` and `trunk_top`, and screw them together with 2 `M3x10` screws through these holes
 
 <img src="https://github.com/user-attachments/assets/ae36b396-a34a-4691-8e62-fd916cd1f76c" alt="1" width="500px" >
 
@@ -145,6 +123,8 @@ Then, independently mount `head_yaw_to_roll` and `head_roll_mount` to `head_roll
 
 <img src="https://github.com/user-attachments/assets/4648cd6c-391e-41e4-9617-4ecebfa9215b" alt="1" width="500px" >
 
+(You can insert `head_bot_plate` and `body_middle_top` now too to avoid having to disassamble the head later)
+
 Then 
 
 <img src="https://github.com/user-attachments/assets/03f3bdae-06c3-4c37-b68f-14587edd6123" alt="1" width="500px" >
@@ -174,10 +154,63 @@ Like this
 
 ## Electronics
 
+Here is the global electonics schematic for reference 
+
+<table>
+  <tr>
+    <td> <img src="open_duck_mini_v2_wiring_diagram.png" alt="1" width="500px" ></td>
+    <td> <img src="wiring.png" alt="2" width="500px" ></td>
+   </tr> 
+</table>
+
 ### Battery pack
+
+> To be safe, make sure your cells are charged to the same voltage before placing them in the holder.
+
+<table>
+  <tr>
+    <td> <img src="https://github.com/user-attachments/assets/371db809-7cb3-47e1-b277-7fc2bdf21025" alt="1" width="500px" ></td>
+    <td> <img src="https://github.com/user-attachments/assets/3acfa4e6-ecf7-41f6-a965-35a3040f52fb" alt="2" width="500px" ></td>
+   </tr> 
+</table>
+
 
 ### Head
 
-## The rest
+First, insert the M3 inserts in all these holes 
 
-Body parts
+![image](https://github.com/user-attachments/assets/ef4cd513-6b8d-41fa-9cc3-149fc8333d3e)
+
+
+Then insert the bearing, mount the ear motors and the raspberry pi zero 2w.
+
+Then assemble the neck with the head like this
+
+![image](https://github.com/user-attachments/assets/96fd5347-bff7-47e9-a7bd-fde17ab1bcd2)
+
+
+## Body
+
+First screw on `body_middle_bottom`
+
+![Capture d’écran du 2025-02-09 12-10-00](https://github.com/user-attachments/assets/081d8840-8e88-4938-9d9a-4d97614e6261)
+
+Then insert the M3 inserts in all the holes of `body_middle_bottom` and `body_middle_top` on which we'll mount the battery pack and `body_front`.
+
+Then mount `body_middle_top`, `body_front` and the battery pack
+
+<table>
+  <tr>
+    <td> <img src="https://github.com/user-attachments/assets/679a9cd2-89ca-41e8-9d03-f93fc040068b" alt="1" width="500px" ></td>
+    <td> <img src="https://github.com/user-attachments/assets/ca292c48-1c72-4649-b7d1-4d3c9eac62ac" alt="2" width="500px" ></td>
+   </tr> 
+</table>
+
+Et voila :) 
+
+<table>
+  <tr>
+    <td> <img src="https://github.com/user-attachments/assets/312ec747-8eb4-4145-92eb-c1c3ddba80da" alt="1" width="500px" ></td>
+    <td> <img src="https://github.com/user-attachments/assets/864d9dd7-3daf-4e63-913c-2e99157e4aaf" alt="2" width="500px" ></td>
+   </tr> 
+</table>
