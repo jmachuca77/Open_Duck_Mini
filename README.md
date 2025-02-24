@@ -8,16 +8,25 @@
    </tr> 
 </table>
 
-I'm making a miniature version of the BDX Droid by Disney. It is about 42 centimeters tall with its legs extended.
+We are making a miniature version of the BDX Droid by Disney. It is about 42 centimeters tall with its legs extended.
 The full BOM cost should be under $400 !
 
-> Update 07/02/2025 : I'm writing documentation on the go, but the design and BOM should not change drastically. Still missing the "expression" features, but they can be added after building the robot!
+This repo is kind of a hub where we centralize all resources related to this project. This is a working repo, so there are a lot of undocumented scripts :) We'll try to clean things up at some point.
+
+
+# State of sim2real
+
+The gait is getting better, but still not very stable
+
+https://github.com/user-attachments/assets/69a1e5e8-f3f7-4294-a4e4-85182c297dfa
+
+# Updates
+
+> Update 24/02/2025: Working hard on sim2real ! 
+
+> Update 07/02/2025 : We are writing documentation on the go, but the design and BOM should not change drastically. Still missing the "expression" features, but they can be added after building the robot!
 
 > Update 22/01/2025 : The mechanical design is pretty much finalized (fixing some mistakes here and there). The current version does not include all the "expression" features we want to include in the final robot (LEDs for the eyes, a camera, a speaker and a microphone). We are now working on making it walk with reinforcement learning !
-
-# This repo
-
-This is kind of a hub where I centralize all resources related to this project. This is a working repo, so there are a lot of undocumented scripts :) I'll try to clean things up at some point.
 
 # CAD
 
@@ -27,7 +36,7 @@ See [this document](docs/prepare_robot.md) for getting from a onshape design to 
 
 # RL stuff
 
-We are switching to Mujoco Playground, see this [repo](https://github.com/SteveNguyen/openduckminiv2_playground/tree/imitation_reward)
+We are switching to Mujoco Playground, see this [repo](https://github.com/apirrone/Open_Duck_Playground)
 
 https://github.com/user-attachments/assets/293ed5f2-bd24-472e-b44d-c2e4153b8cba
 
