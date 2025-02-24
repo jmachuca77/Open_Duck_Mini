@@ -1,5 +1,7 @@
 # Assembly guide
 
+> Before assembling the duck, you should first [configure your motors](./configure_motors.md)
+
 ## Requirements : 
 
 You will need : 
@@ -214,3 +216,6 @@ Et voila :)
     <td> <img src="https://github.com/user-attachments/assets/864d9dd7-3daf-4e63-913c-2e99157e4aaf" alt="2" width="500px" ></td>
    </tr> 
 </table>
+
+
+> Now that your duck is fully assembled, you setup the raspberry pi and the runtime software [here](https://github.com/apirrone/Open_Duck_Mini_Runtime)
