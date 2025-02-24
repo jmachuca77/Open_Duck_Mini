@@ -5,5 +5,7 @@ People involved in the project. (I'll try to update this list when I think of a 
 - Augustin Crampette
 - Michel Aractingi
 - Mankaran Singh
+- Mimir Reynisson
+- Steve N'Guyen
 - Pierre Rouanet
 - Thomas Wolf
