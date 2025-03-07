@@ -20,7 +20,8 @@ The gait is getting better !
 
 https://github.com/user-attachments/assets/5ea58549-78dc-4448-8f86-d3e0499df830
 
-https://github.com/user-attachments/assets/5e3620b8-f1f5-4992-9afc-018f0ff47b31
+https://github.com/user-attachments/assets/a0afcd38-15d8-40c6-8171-a619107406b8
+
 
 # Updates
 
