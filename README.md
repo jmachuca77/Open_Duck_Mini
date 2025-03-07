@@ -16,11 +16,16 @@ This repo is kind of a hub where we centralize all resources related to this pro
 
 # State of sim2real
 
-The gait is getting better, but still not very stable
+The gait is getting better ! 
 
-https://github.com/user-attachments/assets/69a1e5e8-f3f7-4294-a4e4-85182c297dfa
+https://github.com/user-attachments/assets/5ea58549-78dc-4448-8f86-d3e0499df830
+
+https://github.com/user-attachments/assets/bf2ef57d-b49a-4f20-89e4-7e9b5838fdeb
+
 
 # Updates
+
+> Update 07/02/2025: Big progress on sim2real, see videos below :)
 
 > Update 24/02/2025: Working hard on sim2real ! 
 
