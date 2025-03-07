@@ -20,12 +20,11 @@ The gait is getting better !
 
 https://github.com/user-attachments/assets/5ea58549-78dc-4448-8f86-d3e0499df830
 
-https://github.com/user-attachments/assets/bf2ef57d-b49a-4f20-89e4-7e9b5838fdeb
-
+https://github.com/user-attachments/assets/5e3620b8-f1f5-4992-9afc-018f0ff47b31
 
 # Updates
 
-> Update 07/02/2025: Big progress on sim2real, see videos below :)
+> Update 07/02/2025: Big progress on sim2real, see videos above :)
 
 > Update 24/02/2025: Working hard on sim2real ! 
 
