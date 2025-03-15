@@ -117,6 +117,13 @@ You know the drill
 
 ### Assemble the head
 
+> TODO Update this with the new head features
+
+For reference, the inside of the head looks like this now 
+
+![image](https://github.com/user-attachments/assets/91284081-a563-4c02-bb3d-194b3afbc25c)
+
+
 First, mount `head_pitch_to_yaw` like this 
 
 <img src="https://github.com/user-attachments/assets/a4dba395-eb0d-4150-8980-8e14f1173d02" alt="1" width="500px" >
