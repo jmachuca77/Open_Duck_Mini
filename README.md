@@ -25,6 +25,7 @@ https://github.com/user-attachments/assets/a0afcd38-15d8-40c6-8171-a619107406b8
 
 # Updates
 
+> Update 15/03/2025: join our discord server to get help or show us your duck :) https://discord.gg/UtJZsgfQGe
 > Update 07/02/2025: Big progress on sim2real, see videos above :)
 
 > Update 24/02/2025: Working hard on sim2real ! 
