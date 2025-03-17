@@ -154,6 +154,9 @@ TODO take a photo
 
 Like this 
 
+> It's actually better to mount the IMU with the correct natural orientation, which would be flipped along the X axis compared to the pictures below
+> TODO take a picture and explain better 
+
 <table>
   <tr>
     <td> <img src="https://github.com/user-attachments/assets/8772996d-5906-48fa-8cbe-6b6823982375" alt="1" width="500px" ></td>
