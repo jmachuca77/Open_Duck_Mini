@@ -84,6 +84,5 @@ This repo contains the code to run the policies on the onboard computer (Raspber
 
 
 # Global project TODO
-- [] Streamline the URDF/MJCF export process using the new version of onshape-to-robot
-  - Automatically decimate the meshes ? Create a nice "visual" version and a rl training version ? (talk with Greg and Steve)
-- [] Centralize the URDF/MJCF. Separate repo ? Menagerie ? 
+
+- [ ] Centralize the URDF/MJCF. Separate repo ? Menagerie ? 
