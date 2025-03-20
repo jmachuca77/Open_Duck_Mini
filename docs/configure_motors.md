@@ -1,13 +1,14 @@
 # Configure the motors
 
-> For now, we use [LeRobot's](https://github.com/huggingface/lerobot) motor configuration script. We'll add a simple configuration script here soon.
+Clone and install (`pip install -e .`) the runtime repo on the `v2` branch : `https://github.com/apirrone/Open_Duck_Mini_Runtime`
 
-Clone and install LeRobot.
+You can either install it on your own computer or on the raspberry pi for the configuration, as you want. You'll just want a way to power the servos, for example, the battery pack.
+
 
 Then for each motor, run the following command : 
 
 ```bash
-python lerobot/scripts/configure_motor.py --port /dev/ttyACM0 --brand feetech --model sts3215 --baudrate 1000000 --ID <ID>
+python configure_motor.py --id <id>
 ```
 
 The motors ids are : 
