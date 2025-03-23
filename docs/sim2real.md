@@ -1,3 +1,5 @@
+> Not finalized yet
+
 # Training policies that transfer to the real robot (sim2real)
 
 We want to train policies that transfer well to the real robot. This is the sim2real problem. It's a hard problem, especially for us since we are using cheap servomotors that are hard to model and not overly powerful. 
@@ -29,4 +31,15 @@ It's critical that the simulator simulates the motors accurately, because we wil
 - forcerange
 
 ## Training policies 
+
+We use our own [mujoco playground](https://github.com/google-deepmind/mujoco_playground) based framework, [Open Duck Playground](https://github.com/apirrone/Open_Duck_Playground)
+
+In the [joystick](https://github.com/apirrone/Open_Duck_Playground/blob/main/playground/open_duck_mini_v2/joystick.py) env, you can try to enable/disable different rewards, write your own, play with the weights, noise, randomization etc. 
+
+We obtained good results by implementing the imitation reward described by Disney in their [BDX paper](https://github.com/apirrone/Open_Duck_Playground/blob/main/playground/open_duck_mini_v2/joystick.py). 
+
+To use this reward, we need reference motion. We made [this repo](https://github.com/apirrone/Open_Duck_reference_motion_generator) to generate such motion using a parametric walk engine. Following the instructions there, you can generate a `polynomial_coefficients.pkl` file which contains the reference motions. There is already such a file in the playground repo under the `data/` directory. 
+
+Once your policy is trained, you can try to run it on the real robot using [this script](https://github.com/apirrone/Open_Duck_Mini_Runtime/blob/v2/scripts/v2_rl_walk_mujoco.py) in the runtime repo. Make sure you completed all the steps in the [checklist](https://github.com/apirrone/Open_Duck_Mini_Runtime/blob/v2/checklist.md) before running this.
+
 
