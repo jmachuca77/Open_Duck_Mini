@@ -83,7 +83,7 @@ This repo contains the code to run the policies on the onboard computer (Raspber
 
 When we get a very nice stable and robust walk that transfers to the real robot, we'll provide it here (you can ask for a checkpoint on the discord too if you want to try).
 
-If you want to train your own policies, and contribute to making the ducks walk nicely, see [this document](docs/training_policies.md)
+If you want to train your own policies, and contribute to making the ducks walk nicely, see [this document](docs/sim2real.md)
 
 
 # Global project TODO
