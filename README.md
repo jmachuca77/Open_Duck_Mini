@@ -18,12 +18,14 @@ This repo is kind of a hub where we centralize all resources related to this pro
 
 The gait is getting better ! 
 
-https://github.com/user-attachments/assets/5ea58549-78dc-4448-8f86-d3e0499df830
+https://github.com/user-attachments/assets/4129974a-9d97-4651-9474-c078043bb182
 
 https://github.com/user-attachments/assets/a0afcd38-15d8-40c6-8171-a619107406b8
 
 
 # Updates
+
+> Update 02/04/2024: You can try two policies we trained : (this one)[BEST_WALK_ONNX.onnx] and (this one)[BEST_WALK_ONNX_2.onnx]
 
 > Update 15/03/2025: join our discord server to get help or show us your duck :) https://discord.gg/UtJZsgfQGe
 
