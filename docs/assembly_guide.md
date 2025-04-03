@@ -58,6 +58,18 @@ And assemble everything like so. Make sure the driver side of the motor is on th
    </tr> 
 </table>
 
+You can add the foot switches like this too :
+
+> You press fit them so that the switch is activated when the foot touches the ground
+
+<table>
+  <tr>
+    <td> <img src="https://github.com/user-attachments/assets/71b9ad91-864e-423f-97a3-911d65182ab9" alt="1" width="500px" > </td>
+    <td> <img src="https://github.com/user-attachments/assets/59e15c7c-3515-4408-bfe9-80e30c4cd007" alt="1" width="500px" > </td>
+   </tr> 
+</table>
+
+
 ### Assemble the shins
 
 Insert M3 Inserts in these holes of `leg_spacer` (on both sides. Insert 4 M3 inserts in total) :
