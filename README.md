@@ -43,7 +43,7 @@ https://github.com/user-attachments/assets/a0afcd38-15d8-40c6-8171-a619107406b8
 
 https://cad.onshape.com/documents/64074dfcfa379b37d8a47762/w/3650ab4221e215a4f65eb7fe/e/0505c262d882183a25049d05
 
-See [this document](docs/prepare_robot.md) for getting from a onshape design to a simulated robot in MuJoCo
+See [this document](docs/prepare_robot.md) for getting from a onshape design to a simulated robot in MuJoCo (Warning, outdated. Has not been updated in a while)
 
 # RL stuff
 
