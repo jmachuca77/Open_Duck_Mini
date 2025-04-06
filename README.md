@@ -69,7 +69,11 @@ We used Rhoban's [BAM](https://github.com/Rhoban/bam)
 
 https://docs.google.com/spreadsheets/d/1gq4iWWHEJVgAA_eemkTEsshXqrYlFxXAPwO515KpCJc/edit?usp=sharing
 
+Chinese: https://zihao-ai.feishu.cn/wiki/AfAtw69vRigXaRk5UkbcrAiLnJw?from=from_copylink
+
 # Build Guide
+
+Chinese: https://zihao-ai.feishu.cn/wiki/space/7488517034406625281
 
 ## Print Guide
 
