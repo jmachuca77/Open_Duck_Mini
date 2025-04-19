@@ -205,6 +205,7 @@ First, insert the M3 inserts in all these holes
 
 ![image](https://github.com/user-attachments/assets/ef4cd513-6b8d-41fa-9cc3-149fc8333d3e)
 
+> TODO add instructions for expression features (camera, antennas, eye leds, projector and speaker)
 
 Then insert the bearing, mount the ear motors and the raspberry pi zero 2w.
 

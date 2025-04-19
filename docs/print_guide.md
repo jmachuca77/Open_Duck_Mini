@@ -34,5 +34,10 @@ All the parts are printed in standard PLA with 15% infill, except for `foot_bott
 - body_middle_top.stl x1
 - body_back.stl x1
 - battery_pack_lid.stl x1
-
-- 
+- bulb.stl x1
+- flash_light_module.stl x1
+- flash_reflector_interface.stl x1
+- left_eye.stl x1
+- right_eye.stl x1
+- speaker_interface.stl x1
+- speaker_stand.stl x1
