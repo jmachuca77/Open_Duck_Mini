@@ -26,8 +26,8 @@ https://github.com/user-attachments/assets/a0afcd38-15d8-40c6-8171-a619107406b8
 # Updates
 
 > Update 02/04/2024: You can try two policies we trained : [this one](BEST_WALK_ONNX.onnx) and [this one](BEST_WALK_ONNX_2.onnx)
-> I run with the following arguments :
-> python v2_rl_walk_mujoco.py --onnx_model_path ~/BEST_WALK_ONNX_2.onnx -p 32 --commands --cutoff_frequency 40
+> Run with the following arguments :
+> python v2_rl_walk_mujoco.py --onnx_model_path ~/BEST_WALK_ONNX_2.onnx
 
 > Update 15/03/2025: join our discord server to get help or show us your duck :) https://discord.gg/UtJZsgfQGe
 
