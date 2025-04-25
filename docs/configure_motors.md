@@ -2,7 +2,7 @@
 
 > This sould be done independently on each motor *before* builiding the duck.
 >
-> During the process, the motor will move to its zero position. You can then install the horn while trying to align it the best you can like in the photo below. 
+> During the process, the motor will move to its zero position. You can then install the horn while trying to align it the best you can like in the photo below. (Don't worry if it's not perfect, we will compensate for that later
 
 ![Capture d’écran du 2025-04-25 09-55-34](https://github.com/user-attachments/assets/e3c4aefa-5e0a-4d4e-89f4-82df9bf30e29)
 
