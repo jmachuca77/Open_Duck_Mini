@@ -169,7 +169,8 @@ TODO take a photo
 Like this 
 
 > It's actually better to mount the IMU with the correct natural orientation, which would be flipped along the X axis compared to the pictures below
-> TODO take a picture and explain better 
+> In the picture below, the IMU is mounted upside down.
+> It probably doesn't really matter a lot if you mount it upside down or not. You can configure how you mounted it later
 
 <table>
   <tr>
