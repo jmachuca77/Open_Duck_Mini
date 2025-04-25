@@ -1,5 +1,12 @@
 # Configure the motors
 
+> This sould be done independently on each motor *before* builiding the duck.
+>
+> During the process, the motor will move to its zero position. You can then install the horn while trying to align it the best you can like in the photo below. 
+
+![Capture d’écran du 2025-04-25 09-55-34](https://github.com/user-attachments/assets/e3c4aefa-5e0a-4d4e-89f4-82df9bf30e29)
+
+
 Clone and install (`pip install -e .`) the runtime repo on the `v2` branch : `https://github.com/apirrone/Open_Duck_Mini_Runtime`
 
 You can either install it on your own computer or on the raspberry pi for the configuration, as you want. You'll just want a way to power the servos, for example, the battery pack.
