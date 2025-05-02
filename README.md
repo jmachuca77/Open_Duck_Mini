@@ -16,7 +16,7 @@ This repo is kind of a hub where we centralize all resources related to this pro
 
 # State of sim2real
 
-The gait is getting better ! 
+https://github.com/user-attachments/assets/58721d0f-2f95-4088-8900-a5d02f41bba7
 
 https://github.com/user-attachments/assets/4129974a-9d97-4651-9474-c078043bb182
 
