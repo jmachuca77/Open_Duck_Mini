@@ -129,14 +129,7 @@ You know the drill
 
 <img src="https://github.com/user-attachments/assets/f96fe44f-a7bc-423e-a925-4aef3e7bf568" alt="1" width="500px" >
 
-### Assemble the head
-
-> TODO Update this with the new head features
-
-For reference, the inside of the head looks like this now 
-
-![image](https://github.com/user-attachments/assets/91284081-a563-4c02-bb3d-194b3afbc25c)
-
+### Assemble the head mechanism
 
 First, mount `head_pitch_to_yaw` like this 
 
@@ -190,6 +183,12 @@ Here is the global electonics schematic for reference
    </tr> 
 </table>
 
+Here is how to wire the feet 
+
+![feet](https://github.com/user-attachments/assets/d3376494-4690-4484-8352-132e6284731a)
+
+
+
 ### Battery pack
 
 > To be safe, make sure your cells are charged to the same voltage before placing them in the holder.
@@ -211,6 +210,11 @@ First, insert the M3 inserts in all these holes
 > TODO add instructions for expression features (camera, antennas, eye leds, projector and speaker)
 
 Then insert the bearing, mount the ear motors and the raspberry pi zero 2w.
+
+For reference, the inside of the head looks like this now 
+
+![image](https://github.com/user-attachments/assets/91284081-a563-4c02-bb3d-194b3afbc25c)
+
 
 Then assemble the neck with the head like this
 
