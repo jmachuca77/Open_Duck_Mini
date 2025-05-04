@@ -10,7 +10,9 @@ You will need :
 - Some wire
 - Loctite Threadlocker blue 243
 
-> General note : Everytime you screw something in the motors, you want to use a little loctite threadlocker. This will prevent the screws from coming loose due to the vibrations during the operation of the robot. It adds a little time to to the build, but you'll be glad you took the time ;)
+> General note : Everytime you screw something in the motors metal against metal, you want to use a little loctite threadlocker. This will prevent the screws from coming loose due to the vibrations during the operation of the robot. It adds a little time to to the build, but you'll be glad you took the time ;)
+>
+> Don't use loctite with the plastic screws
 
 > At any time, you can refer to the CAD here : https://cad.onshape.com/documents/64074dfcfa379b37d8a47762/w/3650ab4221e215a4f65eb7fe/e/0505c262d882183a25049d05
 
@@ -167,7 +169,8 @@ TODO take a photo
 Like this 
 
 > It's actually better to mount the IMU with the correct natural orientation, which would be flipped along the X axis compared to the pictures below
-> TODO take a picture and explain better 
+> In the picture below, the IMU is mounted upside down.
+> It probably doesn't really matter a lot if you mount it upside down or not. You can configure how you mounted it later
 
 <table>
   <tr>

@@ -16,7 +16,7 @@ This repo is kind of a hub where we centralize all resources related to this pro
 
 # State of sim2real
 
-The gait is getting better ! 
+https://github.com/user-attachments/assets/58721d0f-2f95-4088-8900-a5d02f41bba7
 
 https://github.com/user-attachments/assets/4129974a-9d97-4651-9474-c078043bb182
 
@@ -39,6 +39,12 @@ https://github.com/user-attachments/assets/a0afcd38-15d8-40c6-8171-a619107406b8
 
 > Update 22/01/2025 : The mechanical design is pretty much finalized (fixing some mistakes here and there). The current version does not include all the "expression" features we want to include in the final robot (LEDs for the eyes, a camera, a speaker and a microphone). We are now working on making it walk with reinforcement learning !
 
+# Community 
+
+![duck_collage](https://github.com/user-attachments/assets/e240c06e-769f-4c87-b65f-189a442cf1e9)
+
+Join our discord community ! https://discord.gg/UtJZsgfQGe
+
 # CAD
 
 https://cad.onshape.com/documents/64074dfcfa379b37d8a47762/w/3650ab4221e215a4f65eb7fe/e/0505c262d882183a25049d05
@@ -49,11 +55,8 @@ See [this document](docs/prepare_robot.md) for getting from a onshape design to 
 
 We are switching to Mujoco Playground, see this [repo](https://github.com/apirrone/Open_Duck_Playground)
 
-https://github.com/user-attachments/assets/293ed5f2-bd24-472e-b44d-c2e4153b8cba
+https://github.com/user-attachments/assets/037a1790-7ac1-4140-b154-2c901d20d5f5
 
-We are still working with [AWD](https://github.com/rimim/AWD) too
-
-https://github.com/user-attachments/assets/07059dbe-2ebb-4718-afe7-16ce80691073
 
 ## Reference motion generation for imitation learning 
 
@@ -93,9 +96,5 @@ When we get a very nice stable and robust walk that transfers to the real robot,
 
 If you want to train your own policies, and contribute to making the ducks walk nicely, see [this document](docs/sim2real.md)
 
-
-# Global project TODO
-
-- [ ] Centralize the URDF/MJCF. Separate repo ? Menagerie ? 
 
 > Thanks a lot to HuggingFace and Pollen Robotics for sponsoring this project !
